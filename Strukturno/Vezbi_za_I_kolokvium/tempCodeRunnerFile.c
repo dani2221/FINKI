@@ -1,1 +1,0 @@
-            printf("n:%d cel:%d\n",n,nCifra);
