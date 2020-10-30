@@ -12,16 +12,20 @@
 #include <stdio.h>
 
 int main(){
-    int indeks,o1,o2,o3,o4,o5,o6;
-    scanf("%d%d%d%d%d%d%d",&indeks,&o1,&o2,&o3,&o4,&o5,&o6);
-    int startIndeks = indeks;
-    indeks/=10000;
+    int indeks;
+    scanf("%d",&indeks);
     int godina = 3;
-    godina+=17-indeks;
-    float prosek = (o1+o2+o3+o4+o5+o6)/6.0;
+    godina+=17-indeks/10000;
+    float prosek=0;
+    for(int i=0;i<6;i++){
+        int ocenka;
+        scanf("%d",&ocenka);
+        prosek+=ocenka;
+    }
+    prosek/=6.0;
     int nagraden = prosek >= 9.5;
     printf("Prosek: %.3f\n",prosek);
-    printf("Student: %d\n",startIndeks);
+    printf("Student: %d\n",indeks);
     printf("%d godina\n",godina);
     printf("Nagraden: %d\n",nagraden);
     return 0;

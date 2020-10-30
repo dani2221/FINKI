@@ -12,10 +12,7 @@ int main(){
     int pari,suma;
     scanf("%d%d",&pari,&suma);
     suma+=suma*0.18;
-    if(pari-suma>=1){
-        printf("1");
-    }else{
-        printf("0");
-    }
+    printf("%d",pari-suma>=1);
+
     return 0;
 }
