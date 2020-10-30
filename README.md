@@ -6,7 +6,7 @@
 ## Предмети
 - Структурно програмирање
 
-#### Имаш задаши од предмети што не се застапени тука?
+#### Имаш задачи од предмети што не се застапени тука?
 - $ git clone https://github.com/dani2221/FINKI.git
 - $ git checkout -b <ПРЕДМЕТ>
 - $ git remote add upstream https://github.com/dani2221/FINKI.git
