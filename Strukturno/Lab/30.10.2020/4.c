@@ -17,7 +17,7 @@
 int main(){
     int a,b,c;
     scanf("%d%d%d",&a,&b,&c);
-    if(b*b-4*a*c>0) printf("Reshenija na ravenkata se: %.2f i %.2f",(-b+sqrt(b*b-4*a*c))/2*a,(-b-sqrt(b*b-4*a*c))/2*a);
+    if(b*b-4*a*c>0) printf("Reshenija na ravenkata se: %.2f i %.2f",(-b-sqrt(b*b-4*a*c))/(2*a),(-b+sqrt(b*b-4*a*c))/(2*a));
     else if(b*b-4*a*c==0) printf("Dvojno reshenie na ravenkata e: %.2f",(-b)/(2.0*a));
     else printf("Ravenkata nema realni reshenija");
     return 0;
