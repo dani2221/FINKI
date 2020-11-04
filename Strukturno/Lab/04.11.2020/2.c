@@ -24,5 +24,6 @@ int main(){
         }
     }
     if(brojac>5 || brojac==0) printf("NEMA");
+    return 0;
 
 }

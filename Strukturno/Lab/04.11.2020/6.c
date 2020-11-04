@@ -42,4 +42,5 @@ int main(){
         }
     }
     printf("Max amount of reciept: %d. Max tax return for reciepts: %.2f",maksSUMA,maksDDV);
+    return 0;
 }

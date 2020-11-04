@@ -23,5 +23,6 @@ int main(){
         }
     }
     printf("Vkupno: %d",brojac);
+    return 0;
     
 }

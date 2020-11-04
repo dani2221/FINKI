@@ -23,4 +23,5 @@ int main(){
             if(j==n-1) printf("\n");
         }
     }
+    return 0;
 }

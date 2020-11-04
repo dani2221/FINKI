@@ -30,4 +30,5 @@ int main(){
     }
 
     printf("Total tax return is: %.2f",total);
+    return 0;
 }

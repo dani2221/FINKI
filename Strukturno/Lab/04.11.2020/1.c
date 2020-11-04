@@ -19,4 +19,5 @@ int main(){
             if(j==m-1) printf("\n");
         }
     }
+    return 0;
 }

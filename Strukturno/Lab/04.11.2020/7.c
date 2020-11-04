@@ -3,20 +3,26 @@
 // од вака внесените броеви.
 
 
-// ne raboti
-// kako bez nizi?
+// neznam kako bez nizi???
 
 #include <stdio.h>
 
 int main(){
-    int n,pred,maksRazlika=0;
-    scanf("%d %d",&n,&pred);
-    for(int i=1;i<n;i++){
+    int n;
+    scanf("%d",&n);
+    int niza[n];
+    for(int i=0;i<n;i++){
         int a;
         scanf("%d",&a);
-        if(a-pred>maksRazlika) maksRazlika = a-pred;
-        if(pred-a>maksRazlika) maksRazlika = pred-a;
-        pred = a;
+        niza[i]=a;
+    }
+    int maksRazlika = 0;
+    for(int i=0;i<n-1;i++){
+        for(int j=1;j<n;j++){
+            if(niza[i]-niza[j]>maksRazlika) maksRazlika = niza[i]-niza[j];
+            if(niza[j]-niza[i]>maksRazlika) maksRazlika = niza[j]-niza[i];
+        }
     }
     printf("Najgolema razlika: %d",maksRazlika);
+    return 0;
 }

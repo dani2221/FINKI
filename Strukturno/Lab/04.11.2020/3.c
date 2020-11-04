@@ -21,4 +21,5 @@ int main(){
         }
     }
     printf("Vkupno: %d\n",brojac);
+    return 0;
 }
