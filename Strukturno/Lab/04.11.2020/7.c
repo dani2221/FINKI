@@ -15,6 +15,6 @@ int main(){
         if(a>maks) maks = a;
         if(a<min) min = a;
     }
-    printf("Najgolema razlika: %d",maks);
+    printf("Najgolema razlika: %d",maks-min);
     return 0;
 }
