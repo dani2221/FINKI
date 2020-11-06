@@ -9,10 +9,6 @@
 
 
 
-// GRESHKA VO POSLEDNIOT TEST SLUCHAJ
-// maks suma treba da e 20538 a vo test sluchajot e 20048
-
-
 #include <stdio.h>
 
 int main(){
@@ -37,8 +33,10 @@ int main(){
         if(vkCena>30000) printf("Sum %d is bigger than 30000\n",vkCena);
         else {
             printf("Total tax return is: %.2f\n",total);
-            if(vkCena>maksSUMA) maksSUMA = vkCena;
-            if(total>maksDDV) maksDDV = total;
+            if(total>maksDDV){
+                maksDDV = total;
+                maksSUMA=vkCena;
+            }
         }
     }
     printf("Max amount of reciept: %d. Max tax return for reciepts: %.2f",maksSUMA,maksDDV);
