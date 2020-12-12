@@ -5,10 +5,9 @@
 
 #include <stdio.h>
 
-int sumOfDigits(int broj,int suma){
-    if(!broj) return suma;
-    suma+=broj%10;
-    return sumOfDigits(broj/10,suma);
+int sumOfDigits(int broj){
+    if(!broj) return broj;
+    return broj%10 + sumOfDigits(broj/10);
 }
 
 int main(){
@@ -17,7 +16,7 @@ int main(){
     for(int i=0;i<n;i++){
         int broj;
         scanf("%d",&broj);
-        int suma = sumOfDigits(broj,0);
+        int suma = sumOfDigits(broj);
         krajnaSuma+= suma;
         printf("%d\n",suma);
     }

@@ -9,15 +9,14 @@
 #include <stdio.h>
 
 
-int proizvod(int broj,int p){
-    if(!broj) return p;
-    p*=broj%10;
-    return proizvod(broj/100,p);
+int proizvod(int broj){
+    if(!broj) return 1;
+    return broj%10*proizvod(broj/100);
 }
 
 int main(){
     int n;
     scanf("%d",&n);
-    printf("%d",proizvod(n/10,1));
+    printf("%d",proizvod(n/10));
     return 0;
 }

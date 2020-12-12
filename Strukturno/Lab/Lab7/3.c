@@ -7,15 +7,14 @@
 #include <stdio.h>
 
 
-int f(int broj,int suma){
-    if(!broj) return suma;
-    suma+=broj%10;
-    return f(broj/100,suma);
+int f(int broj){
+    if(!broj) return 0;
+    return broj%10+f(broj/100);
 }
 
 int main(){
     int n;
     scanf("%d",&n);
-    printf("%d",f(n/10,0));
+    printf("%d",f(n/10));
     return 0;
 }
