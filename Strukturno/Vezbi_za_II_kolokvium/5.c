@@ -33,10 +33,8 @@ int main() {
     float dobivka = kesh;
     int maks = 0,brojac = 1;
     float maksKoef = 0.0;
-    char rec[100][100];
 
     while(fgets(red,100,f)!=NULL){
-
         int spaces=0;
         char bukva;
         int i=1;
@@ -45,7 +43,6 @@ int main() {
             if(spaces==2){
                 float koef = atof(red+i+1);
                 dobivka *= koef;
-                printf("%.2f\n",koef);
                 if(koef>maksKoef){
                     maks = brojac;
                     maksKoef=koef;
@@ -60,9 +57,13 @@ int main() {
     if(!(f=fopen("livce.txt","r"))) printf("GRESKA");
     int br=0;
     while(1){
-        fgets(red,10,f);
-        if(br==brojac){
-            printf("%s\n",red);
+        fgets(red,100,f);
+        if(br==maks){
+            if(strlen(red)<12){
+                *(red+strlen(red)-1) = '0';
+                strcat(red,"\n");
+            }
+            printf("%s",red);
             break;
         }
         br++;
