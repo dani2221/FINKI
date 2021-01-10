@@ -13,7 +13,8 @@
 #include <stdio.h>
 
 int main(){
-    int n,x=0,y=0;
+    int n;
+    float x=0,y=0;
     scanf("%d",&n);
     float matrica[n][n];
     for(int i=0;i<n;i++){
