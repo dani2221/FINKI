@@ -1,1 +1,0 @@
-printf("%.2f\n", rastojanie(t1, t2));
