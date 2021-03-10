@@ -12,6 +12,8 @@
 - [Објектно-ориентирано програмирање](https://github.com/dani2221/FINKI/tree/master/Objektno)
     - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/Objektno/Lab)
     - [Аудиториски вежби](https://github.com/dani2221/FINKI/tree/master/Objektno/Auditoriski_vezbi)
+- [Основи на веб дизајн](https://github.com/dani2221/FINKI/tree/master/OsnoviVebDizajn)
+    - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/OsnoviVebDizajn/Lab)
 
 #### Имаш задачи од предмети што не се застапени тука?
 - Contribute!
