@@ -1,2 +1,4 @@
 #ignore all .exe files
 **.exe
+/.idea
+/.vscode
