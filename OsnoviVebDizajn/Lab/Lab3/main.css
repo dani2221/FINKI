@@ -1,0 +1,31 @@
+header{
+    height: 30px;
+    padding: 4px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: linear-gradient(to bottom,#92CD00,#6c9616);
+}
+#navBar{
+    margin-left: 120px;
+    color: white;
+    justify-content: center;
+}
+#navBar > a{
+    font-size: 18px;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    text-decoration: none;
+}
+footer{
+    height: 30px;
+    background-color: #81b518;
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    line-height: 30px;
+}
