@@ -1,0 +1,12 @@
+#logo{
+    display: inline-block;
+    float: left;
+}
+.header-nav{
+    display: inline-block;
+    vertical-align: center;
+    float: right;
+    margin: 20px;
+    text-decoration: none;
+    color: black;
+}
