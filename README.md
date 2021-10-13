@@ -20,8 +20,10 @@
   - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/Strukturno/Vezbi_za_I_kolokvium)
   - [Вежби за втор колоквиум и испит](https://github.com/dani2221/FINKI/tree/master/Strukturno/Vezbi_za_II_kolokvium)
 
-### Имаш задачи од предмети што не се застапени тука?
-- Клонирај го проектот, направи твој branch и отвори pull request кон master!
+## Имаш задачи од предмети што не се застапени тука?
+- Направи fork на проектот, направи твој branch и отвори pull request кон master!
+  - Ако додаваш задачи од веќе постоечки предмет направи фолдер во тој предмет со име {godina}, каде {godina} е годината кога се изработувале овие задачи.
+  - Ако не си запознаен со git fork workflow, следи го следниов [guide](https://jarv.is/notes/how-to-pull-request-fork-github/)
 
 
 
