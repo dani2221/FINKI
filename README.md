@@ -19,9 +19,9 @@
   - [Вежби за втор колоквиум и испит](https://github.com/dani2221/FINKI/tree/master/Objektno/Vezbi_za_II_kolokvium)
 - [Основи на веб дизајн](https://github.com/dani2221/FINKI/tree/master/OsnoviVebDizajn)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/OsnoviVebDizajn/Lab)
-- [Напредно програмирање](https://github.com/dani2221/FINKI/tree/master/Napredno)
-  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/Napredno/2021/Lab)
-  - [Аудиториски вежби](https://github.com/dani2221/FINKI/tree/master/Napredno/2021/Auditoriski)
+- [Напредно програмирање](https://github.com/dani2221/FINKI/tree/master/napredno)
+  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/napredno/2021/Lab)
+  - [Аудиториски вежби](https://github.com/dani2221/FINKI/tree/master/napredno/2021/Auditoriski)
 
 ## Имаш задачи од предмети што не се застапени тука?
 - Направи fork на проектот, направи твој branch и отвори pull request кон master!
