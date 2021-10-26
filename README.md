@@ -7,21 +7,23 @@
 Овие задачи се ставени за помош и вежбање. <b>Не смее да се користат за плагијаторство.</b>
 
 ## Предмети
-- [Структурно програмирање](https://github.com/dani2221/FINKI/tree/master/Strukturno)
+- [Структурно програмирање - СП](https://github.com/dani2221/FINKI/tree/master/Strukturno)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/Strukturno/Lab)
   - [Аудиториски вежби](https://github.com/dani2221/FINKI/tree/master/Strukturno/Auditoriski_vezbi)
   - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/Strukturno/Vezbi_za_I_kolokvium)
   - [Вежби за втор колоквиум и испит](https://github.com/dani2221/FINKI/tree/master/Strukturno/Vezbi_za_II_kolokvium)
-- [Објектно-ориентирано програмирање](https://github.com/dani2221/FINKI/tree/master/Objektno)
+- [Објектно-ориентирано програмирање - ООП](https://github.com/dani2221/FINKI/tree/master/Objektno)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/Objektno/Lab)
   - [Аудиториски вежби](https://github.com/dani2221/FINKI/tree/master/Objektno/Auditoriski_vezbi)
   - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/Objektno/Vezbi_za_I_kolokvium)
   - [Вежби за втор колоквиум и испит](https://github.com/dani2221/FINKI/tree/master/Objektno/Vezbi_za_II_kolokvium)
-- [Основи на веб дизајн](https://github.com/dani2221/FINKI/tree/master/OsnoviVebDizajn)
+- [Основи на веб дизајн - ОнВД](https://github.com/dani2221/FINKI/tree/master/OsnoviVebDizajn)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/OsnoviVebDizajn/Lab)
 - [Напредно програмирање](https://github.com/dani2221/FINKI/tree/master/napredno)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/napredno/2021/Lab)
   - [Аудиториски вежби](https://github.com/dani2221/FINKI/tree/master/napredno/2021/Auditoriski)
+- [Алгоритми и податочни структури - АПС](https://github.com/dani2221/FINKI/tree/master/AlgoritmiPodatocniStrukturi)
+  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/AlgoritmiPodatocniStrukturi/2021/Lab)
 
 ## Имаш задачи од предмети што не се застапени тука?
 - Направи fork на проектот, направи твој branch и отвори pull request кон master!
