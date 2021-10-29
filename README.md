@@ -24,6 +24,7 @@
   - [Аудиториски вежби](https://github.com/dani2221/FINKI/tree/master/napredno/2021/Auditoriski)
 - [Алгоритми и податочни структури - АПС](https://github.com/dani2221/FINKI/tree/master/AlgoritmiPodatocniStrukturi)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/AlgoritmiPodatocniStrukturi/2021/Lab)
+  - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/AlgoritmiPodatocniStrukturi/2021/Vezbi_za_I_kolokvium)
 
 ## Имаш задачи од предмети што не се застапени тука?
 - Направи fork на проектот, направи твој branch и отвори pull request кон master!
