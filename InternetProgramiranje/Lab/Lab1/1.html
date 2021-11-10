@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab1-1</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <script type="text/javascript">
+        const num = prompt("Enter 3-digit number");
+        const element = document.getElementById('result');
+        if(num.length != 3 || num.charAt(0)==='0' || isNaN(parseInt(num))){
+            element.innerHTML ="Invalid input"
+        }else{
+            let flag = true;
+            for(let i=0; i<num.length; i++){
+                if(num.charAt(i)!=num.charAt(num.length-i-1)){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag) element.innerHTML="Palindrome";
+            else  element.innerHTML = "Not palindrome";
+        }
+
+    </script>
+</body>
+</html>

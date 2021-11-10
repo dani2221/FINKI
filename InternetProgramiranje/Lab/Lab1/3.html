@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab1-3</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <script type="text/javascript">
+        const input = prompt("Enter sentence");
+        const element = document.getElementById('result');
+        let maxWord = ''
+        input.split(' ').forEach(x => x.length>maxWord.length ? maxWord = x : '');
+        element.innerHTML = maxWord;
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab2-2</title>
+    <script type="text/javascript">
+        const changePic = () => {
+            const picList = [
+                'http://data.whicdn.com/images/15145864/large.jpg',
+                'https://cdn0.vox-cdn.com/uploads/chorus_image/image/48151611/8559004265_4b81d299ce.0.0.jpg',
+                'https://farm5.staticflickr.com/4060/4567292488_5d3f4b05f6_z.jpg'
+            ]
+            const element = document.getElementById('mainImg');
+            element['src'] = picList[Math.floor(Math.random()*3)];
+        }
+    </script>
+</head>
+<body>
+    <img src="" id="mainImg">
+    <button onclick="changePic()" >Change picture</button>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab1-4</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <script type="text/javascript">
+        const element = document.getElementById('result');
+        const num1 = parseInt(prompt("Enter first num"));
+        const num2 = parseInt(prompt("Enter second num"));
+        const num3 = parseInt(prompt("Enter final num"));
+        console.log(num1,num2,num3)
+        if(isNaN(num1) || isNaN(num2) || isNaN(num3)) element.innerHTML="Invalid input";
+        else{
+            element.innerHTML = 'Знакот е ' + (num1*num2*num3>=0 ? '+' : '-');
+        }
+    </script>
+</body>
+</html>

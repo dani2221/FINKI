@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab2-4</title>
+    <script type="text/javascript">
+        const add = () => {
+            const fR = document.getElementById('firstReal');
+            const fI = document.getElementById('firstImag');
+            const sR = document.getElementById('secondReal');
+            const sI = document.getElementById('secondImag');
+            const rR = document.getElementById('resultReal');
+            const rI = document.getElementById('resultImag');
+            rR.value = parseInt(fR.value) + parseInt(sR.value);
+            rI.value = parseInt(fI.value) + parseInt(sI.value);
+        }
+    </script>
+</head>
+<body>
+    <input id="firstReal" type="number" value="0"><input id="firstImag" type="number" value="0">i
+    <br/>
+    <input id="secondReal" type="number" value="0"><input id="secondImag" type="number" value="0">i
+    <br/>
+    <button onclick="add()">Add</button>
+    <br/>
+    <input id="resultReal" type="number" disabled><input id="resultImag" type="number" disabled>i
+</body>
+</html>

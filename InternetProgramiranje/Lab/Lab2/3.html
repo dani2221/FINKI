@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Lab2-3</title>
+</head>
+<body>
+<h1>About Me</h1>
+<ul>
+    <li>Name: <span id="name"></span>
+    <li>Index: <span id="index"></span>
+    <li>Hometown: <span id="hometown"></span>
+</ul>
+<script type="text/javascript">
+    document.body.style.fontFamily='Arial';
+    document.getElementById('name').innerHTML = 'Danilo';
+    document.getElementById('index').innerHTML = '206033';
+    document.getElementById('hometown').innerHTML = 'Skopje';
+    [...document.getElementsByTagName('li')].forEach(e => e.style.backgroundColor='red')
+</script>
+</body>
+</html>

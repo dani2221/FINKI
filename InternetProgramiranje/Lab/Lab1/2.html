@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab1-2</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <script type="text/javascript">
+        const input = prompt("Enter phone number");
+        const element = document.getElementById('result');
+        const devided = [input.slice(0,3),input.slice(3,6),input.slice(6)]
+        let operator = "";
+        if(devided[0]=='070' || devided[0]=='071' || devided[0]=='072') operator="T-mobile"
+        if(devided[0]=='075' || devided[0]=='076') operator="One"
+        if(devided[0]=='077' || devided[0]=='078') operator="Vip"
+        if(operator == '') element.innerHTML = 'Invalid input';
+        else element.innerText = devided[0]+'/'+devided[1]+'-'+devided[2]+' '+operator;
+    </script>
+</body>
+</html>
