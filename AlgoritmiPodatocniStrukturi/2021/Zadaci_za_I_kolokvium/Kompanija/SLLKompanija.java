@@ -72,13 +72,16 @@ class SLL {
 	
 	public SLL brisi_pomali_od(int iznos) {
 		SLLNode temp = first;
-		while (temp!=null && temp.plata<iznos){
+		while (temp != null && temp.plata < iznos) {
 			this.first = temp.succ;
 			temp = temp.succ;
 		}
-		while (temp.succ!=null){
-			if(temp.succ.plata<iznos){
-				temp.succ = temp.succ.succ;
+		if (temp == null) return this;
+		while (temp != null && temp.succ != null) {
+			SLLNode inTemp = temp.succ;
+			while (inTemp != null && inTemp.plata < iznos) {
+				temp.succ = inTemp.succ;
+				inTemp = inTemp.succ;
 			}
 			temp = temp.succ;
 		}
@@ -94,13 +97,13 @@ class SLL {
 	}
    
 	public SLL sortiraj_opagacki() {
-		if(this.length()==1) return this;
-		this.insertFirst(-1,0);
+		if (this.length() <= 1) return this;
+		this.insertFirst(-1, 0);
 		while (true) {
 			boolean change = false;
 			SLLNode temp = first;
 			while (temp.succ.succ != null) {
-				if (temp.succ.id < temp.succ.succ.id){
+				if (temp.succ.id < temp.succ.succ.id) {
 					changePlaces(temp);
 					change = true;
 				}
