@@ -71,63 +71,47 @@ class SLL {
 	
 	
 	public SLL brisi_pomali_od(int iznos) {
-		SLLNode prevTemp = null;
 		SLLNode temp = first;
-		boolean flag = false;
-		boolean deletedPrev = false;
-		while (temp!=null){
-			if(temp.plata<iznos){
-				if(prevTemp!=null){
-					prevTemp.succ = temp.succ;
-					deletedPrev = true;
-				}
-				else {
-					first = first.succ;
-					flag = true;
-				}
+		while (temp!=null && temp.plata<iznos){
+			this.first = temp.succ;
+			temp = temp.succ;
+		}
+		while (temp.succ!=null){
+			if(temp.succ.plata<iznos){
+				temp.succ = temp.succ.succ;
 			}
-			if(flag){
-				prevTemp = null;
-				temp = first;
-				flag = false;
-			}
-			else {
-				if(deletedPrev){
-					deletedPrev = false;
-					temp = temp.succ;
-				}else {
-					prevTemp = temp;
-					temp = temp.succ;
-				}
-			}
+			temp = temp.succ;
 		}
 		return this;
+	}
+	private void changePlaces(SLLNode prev){
+		SLLNode firstChange = prev.succ;
+		SLLNode secondChange = firstChange.succ;
+		SLLNode last = secondChange.succ;
+		prev.succ = secondChange;
+		secondChange.succ = firstChange;
+		firstChange.succ = last;
 	}
    
 	public SLL sortiraj_opagacki() {
-		if(first==null) return this;
-		if(first.succ==null) return this;
-		boolean sorted = true;
+		if(this.length()==1) return this;
+		this.insertFirst(-1,0);
 		while (true) {
+			boolean change = false;
 			SLLNode temp = first;
-			sorted = true;
-			while (temp.succ != null) {
-				if (temp.id < temp.succ.id) {
-					int tempPlata = temp.succ.plata;
-					int tempId = temp.succ.id;
-					temp.succ.plata = temp.plata;
-					temp.succ.id = temp.id;
-					temp.plata = tempPlata;
-					temp.id = tempId;
-					sorted = false;
+			while (temp.succ.succ != null) {
+				if (temp.succ.id < temp.succ.succ.id){
+					changePlaces(temp);
+					change = true;
 				}
 				temp = temp.succ;
 			}
-			if(sorted) break;
+			if(!change) break;
 		}
+		first = first.succ;
 		return this;
-
 	}
+
     public void pecati (SLL lista)
     {
     	SLLNode p=lista.first;
