@@ -28,6 +28,7 @@
   - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/AlgoritmiPodatocniStrukturi/2021/Vezbi_za_I_kolokvium)
 - [Интернет програмирање на клиентска страна - ИПКС](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/Lab)
+  - [Задачи од прв колоквиум](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/Zadaci_za_I_kolokvium)
 
 ## Имаш задачи од предмети што не се застапени тука?
 - Направи fork на проектот, направи твој branch и отвори pull request кон master!
