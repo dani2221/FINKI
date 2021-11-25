@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>титле</title>
+    <script>
+        const submitForm = () => {
+            const ime = document.getElementById('ime').value;
+            const prezime = document.getElementById('prezime').value;
+            const kod = document.getElementById('kod').value;
+            const vozrast = document.getElementById('vozrast').value;
+            const pol = document.getElementById('pol').value;
+
+            if(isNaN(vozrast)) return;
+
+            let tag = "";
+            for(let ch of kod){
+                if(isNaN(parseInt(ch))){
+                    tag+=ch.toLowerCase();
+                }
+                else{
+                    if(parseInt(ch)>5) tag+=ch;
+                }
+            }
+
+            const table = document.getElementById('tabela');
+            const row = table.insertRow(table.rows.length);
+            row.insertCell(0).innerHTML = ime;
+            row.insertCell(1).innerHTML = prezime;
+            row.insertCell(2).innerHTML = tag;
+
+            const potvrdiBtn = document.createElement('button');
+            potvrdiBtn.innerText='Potvrdi';
+            potvrdiBtn.onclick = () => potvrdi(potvrdiBtn);
+            const izbrishiBtn = document.createElement('button');
+            izbrishiBtn.innerText='Izbrishi';
+            izbrishiBtn.onclick = () => izbrishi(izbrishiBtn);
+
+            if(parseInt(vozrast.value)<18){
+                potvrdiBtn.disabled = true;
+                izbrishiBtn.disabled = true;
+            }
+
+
+            row.insertCell(3).appendChild(potvrdiBtn);
+            row.insertCell(4).appendChild(izbrishiBtn);
+        }
+        const potvrdi = x => {
+            console.log(x);
+            const brojac = document.getElementById('potvrdeni');
+            brojac.innerText = (parseInt(brojac.innerText)+1).toString();
+            x.disabled = true;
+        }
+        const izbrishi = x => {
+            let removeIndex = -1;
+            const tag = x.parentElement.parentElement.cells[2].innerText;
+            for(let i=0; i< x.parentElement.parentElement.parentElement.rows.length; i++){
+                if(tag==x.parentElement.parentElement.parentElement.rows[i].cells[2].innerText) removeIndex = i;
+            }
+            console.log(removeIndex)
+            x.parentElement.parentElement.parentElement.deleteRow(removeIndex);
+        }
+    </script>
+</head>
+<body>
+<form>
+    <label for="ime">Ime</label>
+    <input id="ime" type="text">
+    <br/>
+    <label for="prezime">Prezime</label>
+    <input id="prezime" type="text">
+    <br/>
+    <label for="kod">Kod</label>
+    <input id="kod" type="text">
+    <br/>
+    <label for="vozrast">Vozrast</label>
+    <input id="vozrast" type="number">
+    <br>
+    <label for="pol">Pol</label>
+    <select id="pol">
+        <option>Mashki</option>
+        <option>Dzenski</option>
+    </select>
+    <br/>
+    <input type="button" value="sumbit" onclick="submitForm()">
+</form>
+<table id="tabela" border="1px solid black" style="border-collapse: collapse">
+    <thead>
+    <tr>
+        <td>Ime</td>
+        <td>Prezime</td>
+        <td>Tag</td>
+        <td colspan="2">Opcii</td>
+    </tr>
+    </thead>
+</table>
+<p>Potvrdeni: <i id="potvrdeni">0</i></p>
+</body>
+</html>

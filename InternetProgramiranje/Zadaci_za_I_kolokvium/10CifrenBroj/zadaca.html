@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script>
+        const validate = () => {
+            const inputField = document.getElementById('num');
+            if(inputField.value.length!=10 || isNaN(inputField.value)){
+                alert("Please enter a valid 10-digit number");
+                return false;
+            }
+            return true;
+        }
+        const moveLeft = () => {
+            if(!validate()) return;
+            const inputField = document.getElementById('num');
+            inputField.value=inputField.value.slice(2)+inputField.value.slice(0,2);
+        }
+        const moveRight = () => {
+            if(!validate()) return;
+            const inputField = document.getElementById('num');
+            inputField.value=inputField.value.slice(inputField.value.length-2)+inputField.value.slice(0,inputField.value.length-2);
+        }
+        const convert = () => {
+            if(!validate()) return;
+            const inputField = document.getElementById('num');
+            let newStr = ""
+            for(let c of inputField.value){
+                const num = parseInt(c);
+                if(num==0) newStr+=c;
+                else if(num<2) newStr+=((10-num).toString());
+                else newStr+=((num-2).toString());
+            }
+            inputField.value = newStr;
+        }
+        const check = () => {
+            if(!validate()) return;
+            const inputField = document.getElementById('num');
+            let counter = 0;
+            for(let c of inputField.value) {
+                if(parseInt(c)%3==0) counter++;
+            }
+            if(counter>2){
+                const perfectField = document.getElementById('perfect');
+                perfectField.innerText = "Perfect";
+            }else {
+                const perfectField = document.getElementById('perfect');
+                perfectField.innerText = "";
+            }
+        }
+        const store = () => {
+            if(!validate()) return;
+            const inputField = document.getElementById('num');
+            const list = document.getElementById('list');
+            const li = document.createElement('li');
+            li.innerText=inputField.value;
+            list.appendChild(li);
+        }
+    </script>
+</head>
+<body>
+<input type="number" id="num">
+<button onclick="moveLeft()"><</button>
+<button onclick="moveRight()">></button>
+<button onclick="convert()">CONVERT</button>
+<button onclick="store()">STORE</button>
+<button onclick="check()">CHECK</button>
+<p id="perfect"></p>
+<ul id="list">
+
+</ul>
+
+</body>
+</html>
