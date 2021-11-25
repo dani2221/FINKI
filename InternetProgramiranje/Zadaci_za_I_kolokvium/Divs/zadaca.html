@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        const postavi = () => {
+            const input = document.getElementById('inst');
+            const values = input.value.split(',');
+            if(values.length!=4){
+                alert("Nevaliden string");
+                return;
+            }
+            if(isNaN(values[1]) || isNaN(values[2])){
+                alert("Nevaliden string");
+                return;
+            }
+            const div = document.createElement('div');
+            div.style.backgroundColor = values[0].trim();
+            div.style.width = values[1].trim()+'px';
+            div.style.height = values[2].trim()+'px';
+
+            const text = document.createElement('p');
+            text.innerText = changeText(values[3].trim());
+
+            div.appendChild(text);
+            document.getElementById('space').appendChild(div);
+        }
+        const changeText = (text) => {
+            let newStr = "";
+            for(let i=0;i<text.length;i++){
+                if(!isNaN(text[i])) newStr+=text[i];
+                else {
+                    if (i % 2 == 0) newStr+=text[i].toLowerCase();
+                    else newStr+=text[i].toUpperCase();
+                }
+            }
+            return newStr;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="inst">
+    <button onclick="postavi()">Постави</button>
+    <div id="space"></div>
+</body>
+</html>
