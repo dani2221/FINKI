@@ -282,9 +282,9 @@ class Order{
         return categorized;
     }
 
-    public void removeItem(int idx) throws OrderLockedException {
+    public void removeItem(int idx) throws OrderLockedException, ArrayIndexOutOfBoundsException {
         if(locked) throw new OrderLockedException();
-        if(idx<0 || idx>items.size()-1) throw new ArrayIndexOutOfBoundsException(idx);
+        if(idx<0 || idx>items.size()-1) throw new ArrayIndexOutOfBoundsException();
         String type = items.get(idx).getType();
         items = items.stream().filter(x -> !x.getType().equals(type)).collect(Collectors.toList());
     }
