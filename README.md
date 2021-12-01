@@ -30,10 +30,12 @@
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/Lab)
   - [Задачи од прв колоквиум](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/Zadaci_za_I_kolokvium)
 
-## Имаш задачи од предмети што не се застапени тука?
+## Придонеси
 - Направи fork на проектот, направи твој branch и отвори pull request кон master!
-  - Ако додаваш задачи од веќе постоечки предмет направи фолдер во тој предмет со име {godina}, каде {godina} е годината кога се изработувале овие задачи.
-  - Ако не си запознаен со git fork workflow, следи го следниов [guide](https://jarv.is/notes/how-to-pull-request-fork-github/)
+  - Ако имаш задачи што ги нема тука, или подобрувања на постоечки задачи отвори pull request.
+  - На секоја задача мора најгоре во коментар да е ставен текстот на задачата или во посебен readme.md фајл во истиот фолдер со задачата.
+  - Дополнителни слики / материјали да се стават во истиот фолдер со задачата.
+- Ако не си запознаен со git fork workflow, следи го следниов [guide](https://jarv.is/notes/how-to-pull-request-fork-github/)
 
 
 
