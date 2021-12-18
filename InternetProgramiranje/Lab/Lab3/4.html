@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab3-4</title>
+    <script>
+        const response = book => book.alreadyRead ?
+            `You already read "${book.name}" by ${book.author}` :
+            `You still need to read "${book.name}" by ${book.author}`
+        const books = [
+            {name: "djasfsha kjdasd", author: "sad sa sdg", alreadyRead: false},
+            {name: "sd kjdasd", author: "cxv sa sdg", alreadyRead: true},
+            {name: "3243 324", author: "fh sa sdg", alreadyRead: false},
+            {name: "ewr sdf", author: "sgd sa sdg", alreadyRead: true},
+            {name: "rweerwer kjsdfdasd", author: "xzc sa sdg", alreadyRead: false},
+            {name: "hgk sfdss", author: "b sa sdg", alreadyRead: true},
+            {name: "sfd vcxm", author: "sdjlaks sa sdg", alreadyRead: false},
+        ].forEach(x => console.log(`${x.name} : ${x.author}\n${response(x)}`))
+    </script>
+</head>
+<body>
+
+</body>
+</html>
