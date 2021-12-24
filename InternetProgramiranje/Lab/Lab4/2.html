@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab4-2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        const show = () => {
+            const items = $("#items").val().split(',').map(el=>el.trim());
+            const isCheckBox = $("#option").val() === 'Checkbox';
+            const result = $("#result");
+            if(isCheckBox){
+                let html = '';
+                items.map(it => html+=`<input type="checkbox">${it}</input>`);
+                result.html(html);
+            }
+            else{
+                let html = '';
+                items.map(it => html+=`<input name="name" type="radio">${it}</input>`);
+                result.html(html);
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <label for="items">Items: </label>
+    <input type="text" id="items"/>
+    <select id="option">
+        <option>Radio button</option>
+        <option>Checkbox</option>
+    </select>
+    <button onclick="show()">Show</button>
+</div>
+<form id="result">
+
+</form>
+
+</body>
+</html>

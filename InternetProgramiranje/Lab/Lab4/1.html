@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab4-1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        const tblValues = [];
+        const vnesi = () => {
+            const obj = {
+                ime: $("#ime").val(),
+                prezime: $("#prezime").val(),
+                predmet: $("#predmet").val(),
+                ocenka: $("#ocenka").val(),
+                index: $("#index").val(),
+            }
+            if(!obj.ime) return;
+            if(!obj.prezime) return;
+            if(!obj.index) return;
+            if(!obj.predmet) return;
+            if(isNaN(obj.index) || isNaN(obj.ocenka)) return;
+            tblValues.push(obj);
+            rerenderTable();
+            $("#ime").val('');
+            $("#prezime").val('');
+            $("#predmet").val('');
+            $("#index").val('');
+        }
+        const rerenderTable = () => {
+            const table = $("#insetTable");
+            table.html('');
+            tblValues.forEach(val => {
+                table.append(`<tr>
+                                <td>${val.ime}</td>
+                                <td>${val.prezime}</td>
+                                <td>${val.index}</td>
+                                <td>${val.predmet}</td>
+                                <td>${val.ocenka}</td>
+                             </tr>`)
+            })
+        }
+    </script>
+</head>
+<body>
+<div>
+    <h1>Форма за внесување оценки</h1>
+    <label for="ime">Име: </label>
+    <input id="ime" name="ime" type="text">
+    </br>
+    <label for="prezime">Презиме: </label>
+    <input id="prezime" name="prezime" type="text">
+    </br>
+    <label for="index">Индекс: </label>
+    <input id="index" name="index" type="number">
+    </br>
+    <label for="predmet">Предмет: </label>
+    <input id="predmet" name="predmet" type="text">
+    </br>
+    <label for="ocenka">Оценка: </label>
+    <select id="ocenka">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+    </select>
+    </br>
+    <button onclick="vnesi()">Внеси</button>
+</div>
+<div>
+    <table id="table" border="1px solid black" style="border-collapse: collapse">
+        <thead>
+        <tr>
+            <td>Име</td>
+            <td>Презиме</td>
+            <td>Индекс</td>
+            <td>Предмет</td>
+            <td>Оценка</td>
+        </tr>
+        </thead>
+        <tbody id="insetTable">
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
