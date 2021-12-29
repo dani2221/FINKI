@@ -6,7 +6,15 @@
 ## Напомена
 Овие задачи се ставени за помош и вежбање. <b>Не смее да се користат за плагијаторство.</b>
 
-## Предмети
+## Кодови по семестри
+- Семестар 1
+  - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar1)
+  - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters)
+- Семестар 2
+  - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar2)
+  - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters2)
+
+## Сите предмети
 - [Структурно програмирање - СП](https://github.com/dani2221/FINKI/tree/master/Strukturno)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/Strukturno/Lab)
   - [Аудиториски вежби](https://github.com/dani2221/FINKI/tree/master/Strukturno/Auditoriski_vezbi)
@@ -22,10 +30,13 @@
 - [Напредно програмирање - НП](https://github.com/dani2221/FINKI/tree/master/napredno)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/napredno/2021/Lab)
   - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/napredno/2021/Vezbi_I_kolokvium)
+  - [Вежби за втор колоквиум](https://github.com/dani2221/FINKI/tree/master/napredno/2021/Vezbi_II_kolokvium)
+  - [Вежби за испит](https://github.com/dani2221/FINKI/tree/master/napredno/2021/Ispitni_zadaci)
   - [Аудиториски вежби](https://github.com/dani2221/FINKI/tree/master/napredno/2021/Auditoriski)
 - [Алгоритми и податочни структури - АПС](https://github.com/dani2221/FINKI/tree/master/AlgoritmiPodatocniStrukturi)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/AlgoritmiPodatocniStrukturi/2021/Lab)
   - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/AlgoritmiPodatocniStrukturi/2021/Vezbi_za_I_kolokvium)
+  - [Вежби за втор колоквиум](https://github.com/dani2221/FINKI/tree/master/AlgoritmiPodatocniStrukturi/2021/Vezbi_za_II_kolokvium)
 - [Интернет програмирање на клиентска страна - ИПКС](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/Lab)
   - [Задачи од прв колоквиум](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/Zadaci_za_I_kolokvium)
