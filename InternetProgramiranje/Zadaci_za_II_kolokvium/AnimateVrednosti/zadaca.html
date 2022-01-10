@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zadaca</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<label for="x">X: </label>
+<input id="x"/>
+<br/>
+<label for="y">Y: </label>
+<input id="y"/>
+<br/>
+<label for="rotation">Rotation: </label>
+<input id="rotation"/>
+<br/>
+<button onclick="toJson()">To JSON</button>
+<br/>
+<button onclick="anim()">Animate</button>
+<br/>
+<div style="width: 30px; height: 30px; background-color: yellow; margin: 10px; position: absolute;" id="maindiv"></div>
+<script>
+    const toJson = () => {
+        const obj = {
+            x: $("#x").val(),
+            y: $("#y").val(),
+            rotation: $("#rotation").val()
+        }
+        console.log((JSON.stringify(obj)))
+    }
+
+    const anim = () => {
+        $("#maindiv").animate({
+            left: $("#x").val(),
+            top: $("#y").val(),
+        })
+        $("#maindiv").css({'transform' : 'rotate('+ $("#rotation").val() +'deg)'});
+    }
+</script>
+</body>
+</html>

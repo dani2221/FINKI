@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<button onclick="leftClicked()"><</button>
+<button onclick="rightClicked()">></button>
+<script>
+    const jsonString = '[{"background-color": "red", "width": "100px", "height": "100px"},{"background-color": "green", "width": "50px", "height": "100px"},{"background-color": "blue", "width": "100px", "height": "50px"}]';
+    const objects = JSON.parse(jsonString);
+    let index = 0;
+    const div = $("<div>").css({...objects[0],position:'absolute'}).appendTo('body');
+    const leftClicked = () => {
+        console.log(index)
+        if(index+1>=objects.length) index=-1;
+        div.animate({left: $(window).width()+50},$(window).width(),()=>{
+            // complete
+            div.css({...objects[++index], left: 0-parseInt(objects[index].width)});
+            div.animate({left:'20px'})
+        })
+    }
+    const rightClicked = () => {
+        if(index-1<0) index=objects.length;
+        div.animate({left: -50-parseInt(objects[--index].width)},$(window).width(),()=>{
+            // complete
+            div.css({...objects[index], left: $(window).width()+50});
+            div.animate({left:'20px'})
+        })
+    }
+</script>
+</body>
+</html>

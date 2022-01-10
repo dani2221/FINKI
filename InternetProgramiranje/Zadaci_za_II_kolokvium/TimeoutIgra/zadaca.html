@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<p id="broevi"></p>
+<input type="text" id="ipt">
+<button onclick="check()">Провери</button>
+<p>Преостанато време <span id="vreme">60</span> секунди</p>
+
+<script>
+    const genNumber = (size) => Math.floor(Math.random()*Math.pow(10,size))
+    const nums = [genNumber(1),genNumber(1),genNumber(2),genNumber(2),genNumber(3),genNumber(3)];
+    $('#broevi').text(`${nums[0]} ${nums[1]} ${nums[2]} ${nums[3]} ${nums[4]} = ${nums[5]}`);
+    const interval = setInterval(()=> {
+        if($('#vreme').text()==0){
+            $('#ipt').attr('disabled',true);
+            clearInterval(interval);
+            return;
+        }
+        $('#vreme').text($('#vreme').text() - 1)
+    },1000);
+
+    const check = () => {
+        if(eval($('#ipt').val())==nums[5]) $('#ipt').attr('disabled',true);
+    }
+</script>
+
+</body>
+</html>
