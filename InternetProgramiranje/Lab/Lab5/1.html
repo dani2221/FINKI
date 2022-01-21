@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+    <style rel="stylesheet" type="text/css">
+        label, button {
+            cursor: pointer;
+        }
+    </style>
+    <script rel="script" type="application/javascript">
+        const calculate = () => {
+            let a = parseFloat( document.querySelector( 'p#numbers #a' ).value );
+            let b = parseFloat( document.querySelector( 'p#numbers #b' ).value );
+            let rezultat = document.querySelector( 'p#rezultat' );
+            let operator;
+            if ( isNaN( a ) ) {
+                alert( "Не се внесени броеви!" );
+                return;
+            }
+            document.querySelectorAll( 'p#operators input[type="radio"]' ).forEach( el => {
+                if ( el.checked ) {
+                    operator = el.getAttribute( 'id' );
+                }
+            } );
+            if ( isNaN( b ) &&
+                operator !== 'sin' &&
+                operator !== 'cos' &&
+                operator !== 'tg' &&
+                operator !== 'cel' &&
+                operator !== 'koren' ) {
+                alert( "Не се внесени броеви!" );
+                return;
+            }
+            rezultat.innerText = "";
+            switch ( operator ) {
+                case 'plus':
+                    rezultat.innerText = a + b;
+                    break;
+                case 'minus':
+                    rezultat.innerText = a - b;
+                    break;
+                case 'mnoz':
+                    rezultat.innerText = a * b;
+                    break;
+                case 'del':
+                    rezultat.innerText = a / b;
+                    break;
+                case 'sin':
+                    rezultat.innerText = Math.sin( a );
+                    break;
+                case 'cos':
+                    rezultat.innerText = Math.cos( a );
+                    break;
+                case 'tg':
+                    rezultat.innerText = Math.tan( a );
+                    break;
+                case 'cel':
+                    rezultat.innerText = Math.trunc( a );
+                    break;
+                case 'stepen':
+                    rezultat.innerText = Math.pow( a, b );
+                    break;
+                case 'koren':
+                    rezultat.innerText = Math.sqrt( a );
+                    break;
+                default:
+                    rezultat.innerText = "Непознат оператор!";
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Калкулатор</h1>
+<div>
+    <div style="text-align: left; float: left">
+        <p id="numbers">
+            <label>а <input id="a" type="text" style="width: 15px"/></label>
+            <label>b <input id="b" type="text" style="width: 15px"/></label>
+        </p>
+        <p id="operators">
+            <label><input id="plus" type="radio" name="oper" checked>a+b</label>
+            <label><input id="minus" type="radio" name="oper">a - b</label>
+            <label><input id="mnoz" type="radio" name="oper">a*b</label>
+            <label><input id="del" type="radio" name="oper">a/b</label>
+            <br>
+            <label><input id="sin" type="radio" name="oper">sin(a)</label>
+            <label><input id="cos" type="radio" name="oper">cos(a)</label>
+            <label><input id="tg" type="radio" name="oper">tg(a)</label>
+            <br>
+            <label><input id="cel" type="radio" name="oper">[a]</label>
+            <label><input id="stepen" type="radio" name="oper">a<sup>b</sup></label>
+            <label><input id="koren" type="radio" name="oper">&radic;<span style="text-decoration: overline">a</span></label>
+        </p>
+        <button id="btn-calc" type="button" name="btn-calc" onclick="calculate()">Пресметај</button>
+        <p id="rezultat"></p>
+    </div>
+</div>
+</body>
+</html>

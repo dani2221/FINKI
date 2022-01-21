@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <style rel="stylesheet" type="text/css">
+        label, button {
+            cursor: pointer;
+        }
+    </style>
+    <script rel="script" type="application/javascript">
+        let number;
+        let max = 10;
+        let obidi;
+
+        const generateRandom = () => {
+            number = Math.floor( ( Math.random() ) * ( 10000 - 1000 ) ) + 1000;
+            console.log( number );
+            obidi = 0;
+            document.querySelector( 'div#prikaz' ).innerHTML = "";
+            document.querySelector( 'input#guess' ).value = "";
+            document.querySelector( 'span#obidi' ).innerHTML = obidi;
+            document.querySelector( 'button#btn-pogodi' ).disabled = false;
+        }
+
+        const guess = () => {
+            let guess = document.querySelector( 'input#guess' ).value;
+            let status = document.querySelector( 'div#prikaz' );
+            let tocni = 0, ima = 0;
+
+            if ( isNaN( parseInt( guess ) ) || parseInt( guess ).toString().length !== 4 ) {
+                alert( "Невалиден влез!" );
+                return;
+            }
+
+            for ( let i = 0; i < guess.length; ++i ) {
+                if ( number.toString().includes( guess[ i ] ) )
+                    ima++;
+                if ( guess[ i ] === number.toString()[ i ] )
+                    tocni++;
+            }
+
+            status.innerHTML += `Има ${ ima }, на место ${ tocni } ${ guess }<br>`;
+
+            if ( tocni === 4 ) {
+                status.innerHTML += "ПОГОДОК!!!";
+                document.querySelector( 'button#btn-pogodi' ).disabled = true;
+            } else {
+                obidi++;
+                if ( obidi > ( max - 1 ) ) {
+                    status.innerHTML += `Не успеавте да го погодите од ${ max } обиди. Бројот е ${ number }`;
+                    document.querySelector( 'button#btn-pogodi' ).disabled = true;
+                }
+                document.querySelector( 'span#obidi' ).innerHTML = obidi;
+            }
+        }
+    </script>
+</head>
+<body onload="generateRandom()">
+<div>
+    <div style="text-align: right; float: left">
+        <span>Обиди <span id="obidi"></span></span>
+        <p><label>Погодок: <input id="guess" type="text" style="width: 150px"/></label></p>
+        <button id="btn-pogodi" type="button" name="btn-pogodi" onclick="guess()">Погоди</button>
+        <button id="btn-new" type="button" name="btn-new" onclick="generateRandom()">Од почеток</button>
+    </div>
+</div>
+<br/>
+<div id="prikaz" style="clear: both"></div>
+</body>
+</html>
