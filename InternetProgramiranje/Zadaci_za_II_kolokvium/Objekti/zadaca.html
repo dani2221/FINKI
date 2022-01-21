@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<label for="colors">Colors: </label>
+<input type="text" id="colors">
+<br/>
+<label for="del">Delimiter: </label>
+<input type="text" id="del">
+<br/>
+<button onclick="draw()">Draw</button>
+<br/>
+<div id="board">
+
+</div>
+
+<script>
+    const draw = () => {
+        $("#board").html("");
+        const colors = $("#colors").val().split($("#del").val());
+        console.log(colors)
+        for(const col of colors) {
+            $("<div>")
+                .css({width:"50px",height:"50px",display:"inline-block",['background-color']:col})
+                .on("click",function(){$(this).hide();})
+                .appendTo("#board");
+        }
+    }
+
+</script>
+</body>
+</html>

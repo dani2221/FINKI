@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<h1>Систем за сметки</h1>
+<br/>
+<label for="ime">Име</label>
+<input type="text" id="ime"/>
+<br/>
+<label for="prezime">Презиме</label>
+<input type="text" id="prezime"/>
+<br/>
+<label for="id">ID</label>
+<input type="text" id="id"/>
+<br/>
+<label for="promet">Промет</label>
+<input type="text" id="promet"/>
+<br/>
+<button onclick="addNew()">Зачувај</button>
+<h2>Внесени сметки</h2>
+<div id="board">
+
+</div>
+
+<script>
+    const JSONString = '[{"ime":"Nikola", "prezime":"Bozhinovski", "promet":6000, "id":"NNN1asdfgh"},{"ime":"Damjan", "prezime":"Tr", "promet":2000, "id":"NNN2asdfgh"}]'
+    let smetki = JSON.parse(JSONString);
+    const plateni = [];
+    console.log(smetki)
+
+    const addNew = () => {
+        //random validacija me mrzi
+        const ime = $("#ime").val();
+        const prezime = $("#prezime").val();
+        const id = $("#id").val();
+        const promet = $("#promet").val();
+        if(smetki.filter(x => x.ime==ime).length>0)  smetki.filter(x => x.ime==ime)[0].promet = promet;
+        else{
+            smetki.push({ime:ime,prezime:prezime,promet:promet,id:id})
+        }
+        rerender();
+    }
+    const rerender = () => {
+        $("#board").html("");
+        for(const smetka of smetki){
+            const div = $("<div>");
+            $("<p>").html("Сметка број: "+Math.floor(Math.random()*10000)).appendTo(div);
+            $("<p>").html("Име: "+smetka.ime).appendTo(div);
+            $("<p>").html("Презиме: "+smetka.prezime).appendTo(div);
+            $("<p>").html("ID "+smetka.id).appendTo(div);
+            $("<p>").html("Промет: "+smetka.promet).appendTo(div);
+            $("<button>").html("Plati").bind("click",()=>{smetki = smetki.filter(x => x.id!=smetka.id);rerender();}).appendTo(div);
+            div.css({margin:"20px",padding:"5px",display:"inline-block",['background-color']: smetka.promet>5000 ? "red" : "lightgreen"})
+            div.appendTo("#board")
+        }
+    }
+    rerender()
+</script>
+
+</body>
+</html>

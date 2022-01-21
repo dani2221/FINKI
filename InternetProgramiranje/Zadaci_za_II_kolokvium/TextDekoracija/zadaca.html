@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zadaca</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+    const _JSONString = '{"color":["green","red"],"background-color":["green","red"]}';
+    const jsonObj = JSON.parse(_JSONString);
+    for (const [key, value] of Object.entries(jsonObj)){
+        $('<span>').html(key).appendTo("body")
+        const select = $('<select>');
+        for(const val of value){
+            $("<option>").html(val).appendTo(select);
+        }
+        $(select).bind("change",(ev)=>{
+            $('#lorem').css({[key]:ev.target.value})
+        })
+        select.appendTo("body")
+    }
+
+</script>
+<p id="lorem">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+</body>
+</html>
