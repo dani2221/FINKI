@@ -37,8 +37,8 @@
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/Lab)
   - [Задачи од прв колоквиум](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/Zadaci_za_I_kolokvium)
   - [Задачи од втор колоквиум](https://github.com/dani2221/FINKI/tree/master/InternetProgramiranje/Zadaci_za_II_kolokvium)
-- [Веројатност и статистика - ВИС](https://github.com/dani2221/FINKI/tree/master/Verojatnostistatistika/)
-  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/Verojatnostistatistika/lab)
+- [Веројатност и статистика - ВИС](https://github.com/dani2221/FINKI/tree/master/VerojatnostIStatistika/)
+  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VerojatnostIStatistika/Lab)
 
 ## Придонеси
 - Направи fork на проектот, направи твој branch и отвори pull request кон master!
