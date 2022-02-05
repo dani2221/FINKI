@@ -268,16 +268,186 @@ t.test(potoa,mu=10,alt="greater",conf.level = 0.99)
 # p>alfa h0 se prifakja ne se zgolemila
 
 
+# 02.03.2015 gr2
+
+# zadaca 1
+#a)
+X = rbinom(30,20,0.4)
+X;min(X);max(X);mean(X);sd(X);var(X);range(X);quantile(X);sum(X);IQR(X);hist(x);
+#b)
+qbinom(0.5,20,0.4)
+#v)
+pred=c(8,12,7,4,8,8,6,8,9,7,6,12,7,10,7);
+potoa=c(13,16,14,8,12,14,16,11,13,10,12,12,14,5,15,9,11,13,8,12,9,15);
+
+log.L = function(p = 0.5){
+  r = dbinom(potoa,22,p)
+  -sum(log(r))
+}
+library(stats4)
+mle(log.L)
+
+chisq.test(rbind(pred,potoa),correct = T)
+
+t.test(potoa,mu=10,alt="greater",conf.level = 0.98)
 
 
+# 06.2015
+# zadaca 1
+
+x = rbinom(40,30,0.5)
+pbinom(10,30,0.5)
+
+# zadaca 2
+Log.L = function(lam = 5){
+  r = dexp(x,lam)
+  -sum(log(r))
+}
+library(stats4)
+mle(Log.L)
 
 
+# 09.2015
+# zadaca 1
+#a)
+x = rgeom(100,0.01)
+min(x);max(x);mean(x);sd(x);IQR(x);var(x);quantile(x);sum(x);range(x);hist(x);
+#b)
+pgeom(5,0.01)
+
+# zadaca 2
+X=c(6,5,10,7,7,8,6,5,2,2);
+mean(X)
+log.L = function(lam=6){
+  r = dpois(X,lam)
+  -sum(log(r))
+}
+library(stats4)
+mle(log.L)
+
+# zadaca 3
+x = matrix(c(42,10,9,39),2,2,byrow = T)
+colnames(x) = c("kuce","mace")
+rownames(x) = c("maski","zenski")
+x
+chisq.test(x,correct = F)
+#p<alfa -> Ha se prifakja, ne se nezavisni
 
 
+# 09.2017
+# zadaca 1
+# a)
+x = rbinom(100,10,0.6)
+x
+# b)
+min(x);max(x);mean(x);sd(x);IQR(x);var(x);quantile(x);sum(x);range(x);hist(x);
+# v)
+dbinom(3,10,0.6)
+length(x[x==3])/length(x)
+
+# zadaca 2
+x=c(5,3,2,1,2,7,4,1,3,1,2,4,1,2,4);
+log.L = function(p = 0.5){
+  r = dgeom(x,p)
+  -sum(log(r))
+}
+library(stats4)
+mle(log.L)
+
+# zadaca 3
+A=c(3.40,3.50,3.57,3.74,3.61,4.27,4.20,5.22);
+B=c(4.09,5.50,4.08,3.93,4.74,4.36,3.32,4.86);
+t.test(A,B,alt="less", var.equal=TRUE)
+
+# zadaca 4
+x = matrix(c(200,240,180,200),2,2,byrow=T)
+chisq.test(x,correct = F)
 
 
+# 09.2017 gr2
+# zadaca 1
+#a)
+x = rbinom(100,15,0.7)
+x
+# b)
+min(x);max(x);mean(x);sd(x);IQR(x);var(x);quantile(x);sum(x);range(x);hist(x);
+# v)
+length(x[x==5])/length(x)
+dbinom(5,15,0.7)
+
+# zadaca 2
+X=c(4, 2, 1, 1, 4, 8, 3, 1, 2, 3, 8, 6, 2, 2, 3);
+
+Log.L = function(p = 0.5){
+  r = dgeom(X,p)
+  -sum(log(r))
+}
+library(stats4)
+mle(Log.L)
+
+# zadaca 3
+Model1=c(6.25, 4.61, 4.09, 7.24, 6.06, 4.83, 6.28);
+Model2=c(7.64, 4.01, 4.68, 4.62, 6.28, 4.84, 5.60);
+t.test(Model1,Model2,alt='less',var.equal=T)
+# p>alfa h0 se prifakja, imaat isto vreme do rasipuvanje
+
+#zadaca 4
+x = matrix(c(180,150,60,40),nrow=2,ncol=2,byrow = T)
+chisq.test(x,correct = F)
+# p>alfa h0 se prifajka, se nezavisni
 
 
+# 01.2018
+# zadaca 1
+x = rnbinom(100,5,0.7) + 5
+min(x);max(x);mean(x);sd(x);IQR(x);var(x);quantile(x);sum(x);range(x);hist(x);
+length(x[x==7])/length(x)
 
+#zadaca 2
+X=c(6, 5, 10, 7, 7, 8, 6, 5, 2, 2);
+log.L=function(lambda=5)
+{
+  r=dpois(X, lambda);
+  -sum(log(r));
+}
+library(stats4)
+mle(log.L)
+
+# zadaca 3
+prva=c(9.3, 10.2, 10.9, 18.9, 17.8, 16, 19.3, 13.9, 16.2, 11.4);
+vtora=c(19, 12, 13.5, 12, 14, 10.5, 12.8);
+t.test(prva,vtora,var.equal=T, alt='less')
+#p>alfa h0 se , isti mu
+
+# zadaca 4
+frequencies=c(0,1,2,3,4,5,6,7,8,9);
+probabilities=c(1010,990,990,960,1020,1000,1000,1030,1020,980)/10000;
+chisq.test(frequencies, probabilities);
+
+
+# 6.2018
+# zadaca 1
+x = rbinom(100,5,0.5)
+min(x);max(x);mean(x);sd(x);IQR(x);var(x);quantile(x);sum(x);range(x);hist(x);
+length(x[x==3])/length(x)
+dbinom(3,5,0.5)
+
+# zadaca 2
+domasni=c(5,3,4,2,2,1,3,4,3,3,1,4,2,4,2,1);
+log.L=function(lambda=2)
+{
+  r=dpois(domasni,lambda);
+  -sum(log(r));
+}
+library(stats4);
+mle(log.L);
+
+verojatnosti=c();
+for(i in 1:16)
+{
+  verojatnosti[i]=dpois(i,2.75)
+}
+verojatnosti
+chisq.test(domasni,verojatnosti)
 
 
