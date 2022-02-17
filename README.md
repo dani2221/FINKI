@@ -9,6 +9,7 @@
 ## Кодови по семестри
 - Семестар 1 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar1) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters)
 - Семестар 2 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar2) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters2)
+- Семестар 3 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar3) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters3)
 
 ## Сите предмети
 - [Структурно програмирање - СП](https://github.com/dani2221/FINKI/tree/master/Strukturno)
