@@ -41,6 +41,12 @@
 - [Веројатност и статистика - ВИС](https://github.com/dani2221/FINKI/tree/master/VerojatnostIStatistika/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VerojatnostIStatistika/Lab)
 
+## Корисни линкови и информации
+- [Предметник](https://docs.google.com/document/d/1-f_vt1WENMCAl2ig4qUKtuMEa_ktEitudfZX_FVGdvU/)
+- На Facebook во search напиши "finki {kratenka_na_predmet}" за фб група за предметот.
+- Финки - Студенти дискорд (побарајте линк од колеги бидејќи нема permanent invites)
+- [FinkiHacks](https://www.mediafire.com/folder/wzdaa8g18f7rw/%D0%A4%D0%98%D0%9D%D0%9A%D0%98?fbclid=IwAR3aP8_TtDzqO0HH3Yx4Ml9X-NA6diw_xKbcpx5573y949WyE1nDeukRJdo) - прилично се стари.
+
 ## Придонеси
 - Направи fork на проектот, направи твој branch и отвори pull request кон master!
   - Ако имаш задачи што ги нема тука, или подобрувања на постоечки задачи отвори pull request.
