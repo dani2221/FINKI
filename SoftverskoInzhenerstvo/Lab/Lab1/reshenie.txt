@@ -1,0 +1,26 @@
+git clone https://github.com/dani2221/SI_2022_lab1_206033.git
+git add .
+git commit -m "Add 5 items to the shopping list"
+git commit -a -m "Add quantities to the items."
+git branch branch1
+git branch branch2
+git log
+git push origin --all
+git checkout branch1
+git commit -a -m "Change quantity of item #5"
+git checkout master
+git commit -a -m "Change quantity of item #2"
+git push origin --all
+git checkout branch2
+git commit -a -m "Modify item #4"
+git log --all
+git commit --amend -a -m "Modify item #4 and add item #6"
+git log --all
+git checkout master
+git merge branch1
+// nema konflikti, recursive merge
+git merge branch2
+// se pojavuvaat konflikti
+git checkout --ours shopping_list.txt
+git add .
+git commit -m "resolve merge conflicts"
