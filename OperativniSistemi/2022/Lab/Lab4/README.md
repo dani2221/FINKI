@@ -1,6 +1,5 @@
 # Лаб. вежба 4 / Lab. 4
-- Opened: Friday, 1 April 2022, 4:00 PM
-- Due: Sunday, 17 April 2022, 11:59 PM
+
 
 ## Задача 1: TCP client (75%)
 
