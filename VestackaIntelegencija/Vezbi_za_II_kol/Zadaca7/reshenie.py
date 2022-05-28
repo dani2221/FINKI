@@ -689,6 +689,6 @@ if __name__ == "__main__":
             else:
                 fp += 1
     acc = (tp+tn)/(tp+tn+fp+fn)
-    per = tp/(tp+fp) if tp+fp != 0 else 0
+    per = tp/(tp+fp) if tp+fp != 0 else 0.0
     print(f"Accuracy: {acc}")
     print(f"Precision: {per}")
