@@ -42,16 +42,16 @@
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VerojatnostIStatistika/Lab)
 - [Оперативни системи - ОС](https://github.com/dani2221/FINKI/tree/master/OperativniSistemi/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/OperativniSistemi/2022/Lab)
-  - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/OperativniSistemi/2022/Vezbi_I_kolokvium)
-  - [Вежби за втор колоквиум](https://github.com/dani2221/FINKI/tree/master/OperativniSistemi/2022/Vezbi_II_kolokvium)
+  - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/OperativniSistemi/2022/Vezbi_za_I_kolokvium)
+  - [Вежби за втор колоквиум](https://github.com/dani2221/FINKI/tree/master/OperativniSistemi/2022/Vezbi_za_II_kolokvium)
 - [Вештачка интелегенција - ВИ](https://github.com/dani2221/FINKI/tree/master/VestackaIntelegencija/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VestackaIntelegencija/Lab)
-  - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/VestackaIntelegencija/Vezbi_I_kolokvium)
-  - [Вежби за втор колоквиум](https://github.com/dani2221/FINKI/tree/master/VestackaIntelegencija/Vezbi_II_kolokvium)
+  - [Вежби за прв колоквиум](https://github.com/dani2221/FINKI/tree/master/VestackaIntelegencija/Vezbi_za_I_kolokvium)
+  - [Вежби за втор колоквиум](https://github.com/dani2221/FINKI/tree/master/VestackaIntelegencija/Vezbi_za_II_kolokvium)
   - [Тестови](https://github.com/dani2221/FINKI/tree/master/VestackaIntelegencija/Testovi)
   - [Домашни](https://github.com/dani2221/FINKI/tree/master/VestackaIntelegencija/Domasni)
-- [Софтверско инженерство - СИ](https://github.com/dani2221/FINKI/tree/master/SoftverskoInzenerstvo/)
-  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/SoftverskoInzenerstvo/Lab)
+- [Софтверско инженерство - СИ](https://github.com/dani2221/FINKI/tree/master/SoftverskoInzhenerstvo/)
+  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/SoftverskoInzhenerstvo/Lab)
 - [Интернет Технологии ВА - ИТ-ВА](https://github.com/dani2221/FINKI/tree/master/InternetTehnologiiVA/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/InternetTehnologiiVA/Lab)
 ## Корисни линкови и информации
@@ -68,8 +68,5 @@
   - На секоја задача мора најгоре во коментар да е ставен текстот на задачата или во посебен readme.md фајл во истиот фолдер со задачата.
   - Дополнителни слики / материјали да се стават во истиот фолдер со задачата.
 - Ако не си запознаен со git fork workflow, следи го следниов [guide](https://jarv.is/notes/how-to-pull-request-fork-github/)
-
-## Известувања
-- Кодовите од предметите Вештачка интелегенција, Оперативни системи, Интернет технологии ќе бидат објавени по завршување на тековниот семестар поради заштита од плагијат.
 
 
