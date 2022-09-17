@@ -10,6 +10,7 @@
 - Семестар 1 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar1) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters)
 - Семестар 2 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar2) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters2)
 - Семестар 3 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar3) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters3)
+- Семестар 4 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar4) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters4)
 
 ## Сите предмети
 - [Структурно програмирање - СП](https://github.com/dani2221/FINKI/tree/master/Strukturno)
@@ -52,8 +53,6 @@
   - [Домашни](https://github.com/dani2221/FINKI/tree/master/VestackaIntelegencija/Domasni)
 - [Софтверско инженерство - СИ](https://github.com/dani2221/FINKI/tree/master/SoftverskoInzhenerstvo/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/SoftverskoInzhenerstvo/Lab)
-- [Интернет Технологии ВА - ИТ-ВА](https://github.com/dani2221/FINKI/tree/master/InternetTehnologiiVA/)
-  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/InternetTehnologiiVA/Lab)
 ## Корисни линкови и информации
 - [Предметник](https://docs.google.com/document/d/1-f_vt1WENMCAl2ig4qUKtuMEa_ktEitudfZX_FVGdvU/)
 - На Facebook во search напиши "finki {kratenka_na_predmet}" за фб група за предметот.
