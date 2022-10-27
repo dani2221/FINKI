@@ -1,0 +1,190 @@
+Лабораториска вежба 1 - за групите со префикс Б
+Потребно предзнаење
+За да разберете како функционираат концептите опфатени во оваа лабораториска вежба, потребно е да прочитате: - Head First Servlets and JSP, Second Edition - Chapter 4: Being a Servlet: request AND response - Chapter 5: Being a Web App: attributes and listeners - Chapter 6: Conversational state: session management - Spring in Action (5th edition) - Chapter 1: Getting started with Spring
+
+Спецификација за лабораториската вежба
+Креирајте нов Spring Boot проект со група mk.ukim.finki.wp и artefactId=lab кој ги има истите зависности како проектот од аудиториските вежби (зависностите може да ги видите во <dependency> тагoвите во pom.xml.
+
+Дефинирајте пакет mk.ukim.finki.wp.lab.model и во него креирајте ја Student класата. Таа треба да содржи:
+
+String username,
+String password,
+String name,
+String surname
+Во mk.ukim.finki.wp.lab.model креирајте Course класа која ќе содржи:
+Long courseId,
+String name,
+String description,
+List<Student> students.
+Појаснување: students е листа која ги чува сите студенти кои слушаат одреден курс.
+
+Креирајте класа StudentRepository во пакетот mk.ukim.finki.wp.lab.repository, во која ќе чувате List<Student> иницијализирана со 5 вредности.
+
+Имплементирајте метод List<Student> findAllStudents(); кој само ќе ја врати листата.
+Имплементирајте метод List<Student> findAllByNameOrSurname(String text); кој ќе направи пребарување низ листата на студенти и ќе ги врати оние во чие име или презиме се содржи текстот text кој се праќа како аргумент на методот.
+Креирајте класа CourseRepository во пакетот mk.ukim.finki.wp.lab.repository, во која ќе чувате List<Course> иницијализирана со 5 вредности.
+
+Имплементирајте метод List<Course> findAllCourses(); кој само ќе ја врати листата од курсеви.
+Имплементирајте метод Course findById(Long courseId); кој само ќе го врати курсот со соодветното id.
+Имплементирајте метод List<Student> findAllStudentsByCourse(Long courseId); кој ќе врати листа од студенти кои слушаат одреден курс.
+Имплементирајте метод Course addStudentToCourse(Student student, Course course); кој ќе направи додавање на нов студент во листата од студенти.
+Дефинирајте ги следните интерфејси во mk.ukim.finki.wp.lab.service кои ќе ги претставуваат бизнис функционалностите на апликацијата:
+
+public interface StudentService {
+     List<Student> listAll();
+     List<Student> searchByNameOrSurname(String text);
+     Student save(String username, String password, String name, String surname);
+}
+public interface CourseService{
+    List<Student> listStudentsByCourse(Long courseId); 
+    Course addStudentInCourse(String username, Long courseId);
+}
+Имплементирајте ги сервисите:StudentService (треба да зависи од StudentRepository) и CourseService (треба да зависи од CourseRepository и StudentService).
+Креирајте сервлет CoursesListSevlet во пакетот mk.ukim.finki.lab.web и мапирајте го на патеката /listCourses. Овој сервлет треба да зависи од CourseService и да ги прикаже сите добиени курсеви од методот listAll().
+
+Прилагодете го фајлот listCourses.html за изгледот на оваа страница.
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcome and Choose a Course</title>
+    <style type="text/css">
+        body {
+            width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Courses List</h1>
+</header>
+<main>
+    <h2>Choose course:</h2>
+    <input type="radio" name="courseId" value="1"> Веб програмирање<br/>
+    <input type="radio" name="courseId" value="2"> Оперативни системи<br/>
+    <input type="radio" name="courseId" value="3"> Електронска и мобилна трговија<br/>
+    <input type="radio" name="courseId" value="4"> Компјутерски мрежи<br/>
+
+    <br/>
+    <a href="/АddStudent">Submit</a>
+</main>
+</body>
+</html>
+Забелешка. Вредноста на секоја ставка во radio листата е id-то на курсот.
+
+При избор на курс, треба да го запаметите изборот. За оваа цел креирајте сервлет ListStudentServlet мапиран на /АddStudent.
+
+Овој сервлет треба да прикаже листа од студенти кои се внесени во системот.
+Во фолдерот src/main/resources/templates додадете фајл listStudents.html.
+Во страницата треба да има форма од која ќе се избере студентот кој треба да се внесе на курсот.
+Типот на елементите во формата е radio. Вредноста на секоја ставка во radio листата е username-от на студентот.
+Доколку студентот не постои, корисникот треба да има опција за додавање на нов студент со клик на копчето Додади студент со што ќе биде пренесен на страницата createStudent. createStudent треба да е мапирана од страна на нов сервлет CreateStudentServlet. Детален опис за овој сервлет ќе најдете во барањето 10.
+При клик на Submit копчето од оваа форма треба да се повика сервлетот на адресата /StudentEnrollmentSummary.
+Информацијата за избран курс од претходниот чекор, треба да ја поставите во сесија. За да поставите информации во сесија, искористете: request.getSession().setAttribute(“yourAttributeName”, attributeValue)
+Прилагодете го фајлот listStudents.html за изгледот на оваа страница.
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add new Student to Course</title>
+        <style type = "text/css">
+            body {
+                width: 800px;
+                margin: auto;
+            }
+            table {
+                width:100%;
+            }
+            table, td, th {
+                border: 1px solid black;
+                padding:3px 2px;
+            }
+            section {
+                float: left;
+                margin: 0 1.5%;
+                width: 63%;
+            }
+            aside {
+                float: right;
+                margin: 0 1.5%;
+                width: 30%;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Student Enrollment - Select the Student </h1>
+        </header>
+        <section>
+            <h2>Select the student to enroll:</h2>
+            <a href='/createStudent' type='button'>Create New Student</a> <br/> <br/>
+            <input type="radio" name="size" value="petar.petrov"> Петар Петров <br/>
+            <input type="radio" name="size" value="mile.milev"> Миле Милев <br/>
+            <input type="radio" name="size" value="gjorgji.gjorgjiev"> Ѓорѓи Ѓорѓиев <br/>
+            <br/>
+
+            <a href="/StudentEnrollmentSummary">Submit</a>
+        </section>
+        <aside>
+            <table>
+                <tr>
+                    <th colspan="2">
+                        Your Enrollment Status
+                    </th>
+                </tr>
+                <tr>
+                    <td><b>Course Id</b></td>
+                    <td>2</td>
+                </tr>
+            </table>
+        </aside>
+
+    </body>
+</html>
+Креирајте сервлет со име CreateStudentServlet во пакетот mk.ukim.finki.wp.lab.web и мапирајте го на /CreateStudent патеката.
+
+Имплементирајте приказ на страна за додавање на студент во која корисникот треба да внесе основни информации за студентот за да се креира во системот.
+Прилагодете го фајлот listStudents.html за изгледот на оваа страница.
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Create a New Student Page</title>
+    </head>
+    <body>
+        <header>
+            <h1>Student Enrollment - Create a New Student </h1>
+        </header>
+        <section>
+            <label for='username'>Username:</label><input id='username' type='text' name='username'/><br/>
+            <label for='password'>Password:</label><input id='password' type='password' name='password'/><br/>
+            <label for='name'>Name:</label><input id='name' type='text' name='name'/><br/>
+            <label for='name'>Surname:</label><input id='surname' type='text' name='surname'/><br/>
+            <input type='submit' value='Submit'/>
+        </section>
+    </body>
+</html>
+При клик на копчето Submit потребно е да се зачуваат информациите од формата, да се креира нов студент во листата од студенти и корисникот да биде редиректиран на страницата каде што се листаат сите студенти за избор /addStudent од претходното барање. При тоа во листата треба да се наоѓа и новододадениот студент кој корисникот ќе може да го избере.
+Креирајте сервлет со име StudentEnrollmentSummary. Овој сервлет треба да го додаде селектираниот студент од претходниот чекор во листата од студенти на избраниот курс. При тоа, треба да ги излиста сите додадени студенти во курсот.
+
+Прилагодете го фајлот studentsInCourse.html за изгледот на оваа страница.
+<html>
+       <head>
+           <meta charset="utf-8">
+           <title>WP lab - Students in Course</title>
+
+       </head>
+       <body>
+           <header>
+               <h1>Students in Course </h1>
+           </header>
+           <section>
+                <div>Веб програмирање</div>
+                <ul>
+                    <li>Петар Петров (petar.petrov)</li>
+                    <li>Јован Јованов (jovan.jovanov)</li>
+                </ul>
+                <a href="/listCourses">Back</a>
+           </section>
+
+       </body>
+   </html>
+Освен за чекорот за селекција на курс, за сите останати сервлети овозможете проверка за тоа дали е избран курсот во првиот чекор. Во случаите кога нема селектирано курс, потребно е да направите редирекција на страната за приказ на курсеви. Што ќе искористите за имплементација на оваа функционалност?
