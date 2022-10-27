@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Add new Student to Course</title>
+    <style type = "text/css">
+        body {
+            width: 800px;
+            margin: auto;
+        }
+        table {
+            width:100%;
+        }
+        table, td, th {
+            border: 1px solid black;
+            padding:3px 2px;
+        }
+        section {
+            float: left;
+            margin: 0 1.5%;
+            width: 63%;
+        }
+        aside {
+            float: right;
+            margin: 0 1.5%;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Student Enrollment - Select the Student </h1>
+</header>
+<section>
+    <h2>Select the student to enroll:</h2>
+    <a href='/CreateStudent' type='button'>Create New Student</a> <br/> <br/>
+    <form th:method="POST" th:action="@{/AddStudent}">
+        <div th:each="student : ${students}">
+            <input th:id="${student.username}"  type="radio" name="student" th:value="${student.username}">
+            <label th:for="${student.username}" th:text="${student.name + ' ' + student.surname}"></label>
+        </div>
+
+        <br/>
+        <input type="submit" value="submit">
+    </form>
+</section>
+<aside>
+    <table>
+        <tr>
+            <th colspan="2">
+                Your Enrollment Status
+            </th>
+        </tr>
+        <tr>
+            <td><b>Course Id</b></td>
+            <td><th:block th:text="${courseId}"></th:block></td>
+        </tr>
+    </table>
+</aside>
+
+</body>
+</html>
