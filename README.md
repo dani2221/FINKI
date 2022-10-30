@@ -56,10 +56,10 @@
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/SoftverskoInzhenerstvo/Lab)
 - [Веб програмирање - ВП](https://github.com/dani2221/FINKI/tree/master/VebProgramiranje/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VebProgramiranje/Lab)
-- [Вовед во наука за податоци - ВНП](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoza/)
-  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoza/Lab)
+- [Вовед во наука за податоци - ВНП](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/)
+  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/Lab)
 - [Паралелно и дистрибуирано процесирање - ПиДП](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/)
-  - [Домашни](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/Lab)
+  - [Домашни](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/Domasni)
 
 
 
