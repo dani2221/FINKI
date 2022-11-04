@@ -54,18 +54,12 @@
   - [Домашни](https://github.com/dani2221/FINKI/tree/master/VestackaIntelegencija/Domasni)
 - [Софтверско инженерство - СИ](https://github.com/dani2221/FINKI/tree/master/SoftverskoInzhenerstvo/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/SoftverskoInzhenerstvo/Lab)
-## Корисни линкови и информации
-- [Финки - Студенти дискорд](https://discord.gg/WkztTVGvU7)
-- [Предметник](https://docs.google.com/document/d/1-f_vt1WENMCAl2ig4qUKtuMEa_ktEitudfZX_FVGdvU/)
-- На Facebook во search напиши "finki {kratenka_na_predmet}" за фб група за предметот.
-  - [Летен семестар](https://docs.google.com/document/d/1R7UgR5PGCW1PclN44kryKwikMs14dZaj8bxqQrdUMWk/edit)
-- [Finki-drive](https://drive.google.com/drive/folders/1GDIqCYQev6LbaliWqBEBd2JTpjia2U3F)
+- [Веб програмирање - ВП](https://github.com/dani2221/FINKI/tree/master/VebProgramiranje/)
+  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VebProgramiranje/Lab)
+- [Вовед во наука за податоци - ВНП](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/)
+  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/Lab)
+- [Паралелно и дистрибуирано процесирање - ПиДП](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/)
+  - [Домашни](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/Domasni)
 
-## Придонеси
-- Направи fork на проектот, направи твој branch и отвори pull request кон master!
-  - Ако имаш задачи што ги нема тука, или подобрувања на постоечки задачи отвори pull request.
-  - На секоја задача мора најгоре во коментар да е ставен текстот на задачата или во посебен readme.md фајл во истиот фолдер со задачата.
-  - Дополнителни слики / материјали да се стават во истиот фолдер со задачата.
-- Ако не си запознаен со git fork workflow, следи го следниов [guide](https://jarv.is/notes/how-to-pull-request-fork-github/)
 
 
