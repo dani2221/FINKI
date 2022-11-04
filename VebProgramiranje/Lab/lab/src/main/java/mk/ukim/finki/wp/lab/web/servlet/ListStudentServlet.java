@@ -41,8 +41,19 @@ public class ListStudentServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String student = (String) req.getParameter("student");
-        long courseId = (long) req.getSession().getAttribute("courseId");
-        courseService.addStudentInCourse(student, courseId);
-        resp.sendRedirect("/StudentEnrollmentSummary");
+        if(student == null){
+            String search = (String) req.getParameter("search");
+            WebContext webContext = new WebContext(req, resp, this.getServletContext());
+            long courseId = (long) req.getSession().getAttribute("courseId");
+            List<Student> students = studentService.searchByNameOrSurname(search);
+            webContext.setVariable("courseId", courseId);
+            webContext.setVariable("students", students);
+
+            this.templateEngine.process("listStudents.html", webContext, resp.getWriter());
+        } else {
+            long courseId = (long) req.getSession().getAttribute("courseId");
+            courseService.addStudentInCourse(student, courseId);
+            resp.sendRedirect("/StudentEnrollmentSummary");
+        }
     }
 }

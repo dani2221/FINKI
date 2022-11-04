@@ -33,6 +33,12 @@
 <section>
     <h2>Select the student to enroll:</h2>
     <a href='/CreateStudent' type='button'>Create New Student</a> <br/> <br/>
+    <div>
+        <form th:method="POST" th:action="@{/AddStudent}">
+            <label for='search'>Search</label><input id='search' type='text' name='search'/><br/>
+            <input type='submit' value='Submit'/>
+        </form>
+    </div>
     <form th:method="POST" th:action="@{/AddStudent}">
         <div th:each="student : ${students}">
             <input th:id="${student.username}"  type="radio" name="student" th:value="${student.username}">
@@ -40,7 +46,7 @@
         </div>
 
         <br/>
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" th:disabled="${students.size()==0}">
     </form>
 </section>
 <aside>
