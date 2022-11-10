@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WP lab - Add Course</title>
+
+</head>
+<body>
+<div style="color: red" th:text="${error}"></div>
+<form th:method="POST" th:action="@{/courses/add}">
+    <label for='name'>Name:</label><input id='name' type='text' name='name' th:value="${course} != null ? ${course.name} : ''"/><br/>
+
+    <label for='description'>Description:</label><input id='description' type='text' name='description' th:value="${course} != null ? ${course.description} : ''"/><br/>
+
+    <select name="teacherId" id="teacherId" th:selected="${course} != null ? ${course.teacher.id} : ''">
+        <option th:each="teacher : ${teachers}" th:value="${teacher.id}" th:text="${teacher.name + ' ' + teacher.surname}"></option>
+    </select>
+
+    <input id='courseEditId' type='hidden' name='courseEditId' th:value="${course} != null ? ${course.courseId} : ''"/><br/>
+    <input type='submit' value='Submit'/>
+</form>
+</body>
+</html>
