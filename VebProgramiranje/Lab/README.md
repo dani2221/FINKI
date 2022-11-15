@@ -7,4 +7,4 @@
 
 Лаб 2:
 - [Барања](./lab2_tekst.txt) 
-- [Имплементација](https://github.com/dani2221/FINKI/commit/cd5de2e58cb4a5e97b6b769adb289e4f6b0379fb)
+- [Имплементација](https://github.com/dani2221/FINKI/commit/44b73a950857d6fdb7648d8e6f90f70bfd6af677)
