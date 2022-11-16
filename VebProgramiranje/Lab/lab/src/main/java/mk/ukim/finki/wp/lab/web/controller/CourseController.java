@@ -4,6 +4,7 @@ import mk.ukim.finki.wp.lab.exceptions.CourseNameExistsException;
 import mk.ukim.finki.wp.lab.exceptions.CourseNotFoundException;
 import mk.ukim.finki.wp.lab.model.Course;
 import mk.ukim.finki.wp.lab.model.Teacher;
+import mk.ukim.finki.wp.lab.model.Type;
 import mk.ukim.finki.wp.lab.service.CourseService;
 import mk.ukim.finki.wp.lab.service.TeacherService;
 import org.springframework.stereotype.Controller;
@@ -11,7 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Controller
 @RequestMapping("/courses")
@@ -26,10 +29,21 @@ public class CourseController {
     }
 
     @GetMapping
-    public String getCoursesPage(@RequestParam(required = false) String error, Model model){
-        List<Course> courses = courseService.listAll();
+    public String getCoursesPage(
+            @RequestParam(required = false) String error,
+            @RequestParam(required = false) String filterType,
+            Model model) {
+        List<Course> courses = null;
+        if(filterType == null){
+            courses = courseService.listAll();
+        }else{
+            courses = courseService.filterByType(Type.valueOf(filterType));
+            model.addAttribute("typeSelect",filterType);
+        }
+
         model.addAttribute("courses",courses);
         model.addAttribute("error", error);
+        model.addAttribute("types", Stream.of(Type.values()).map(Type::name).toArray(String[]::new));
 
         return "listCourses";
     }
@@ -62,7 +76,7 @@ public class CourseController {
     @PostMapping("/delete/{id}")
     public String deleteCourse(@PathVariable long id){
         this.courseService.delete(id);
-        return "redirect:/listCourses";
+        return "redirect:/courses";
     }
 
     @GetMapping("/add-form")
@@ -84,5 +98,9 @@ public class CourseController {
         model.addAttribute("teachers", teachers);
 
         return "add-course";
+    }
+    @PostMapping("/filter")
+    public String filterCourses(@RequestParam String type){
+        return "redirect:/courses?filterType="+type;
     }
 }

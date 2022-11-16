@@ -5,6 +5,7 @@ import mk.ukim.finki.wp.lab.exceptions.CourseNotFoundException;
 import mk.ukim.finki.wp.lab.model.Course;
 import mk.ukim.finki.wp.lab.model.Student;
 import mk.ukim.finki.wp.lab.model.Teacher;
+import mk.ukim.finki.wp.lab.model.Type;
 import mk.ukim.finki.wp.lab.repository.CourseRepository;
 import mk.ukim.finki.wp.lab.repository.StudentRepository;
 import mk.ukim.finki.wp.lab.repository.TeacherRepository;
@@ -54,7 +55,7 @@ public class CourseServiceImpl implements CourseService {
         }
 
         Teacher teacher = teacherRepository.getById(teacherId).get();
-        Course course = new Course(name, description, teacher, new LinkedList<>());
+        Course course = new Course(name, description, teacher, new LinkedList<>(), Type.Mandatory);
         courseRepository.addCourse(course);
         return course;
     }
@@ -71,7 +72,7 @@ public class CourseServiceImpl implements CourseService {
         }
 
         Teacher teacher = teacherRepository.getById(teacherId).get();
-        Course course = new Course(name, description, teacher, new LinkedList<>());
+        Course course = new Course(name, description, teacher, new LinkedList<>(), Type.Mandatory);
         courseRepository.delete(courseId);
         courseRepository.addCourse(course);
         return course;
@@ -80,5 +81,10 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public Course getById(long id) {
         return this.courseRepository.findById(id);
+    }
+
+    @Override
+    public List<Course> filterByType(Type type) {
+        return this.courseRepository.filterByType(type);
     }
 }

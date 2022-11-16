@@ -3,6 +3,7 @@ package mk.ukim.finki.wp.lab.repository;
 import mk.ukim.finki.wp.lab.model.Course;
 import mk.ukim.finki.wp.lab.model.Student;
 import mk.ukim.finki.wp.lab.model.Teacher;
+import mk.ukim.finki.wp.lab.model.Type;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
@@ -28,15 +29,15 @@ public class CourseRepository {
         Teacher tcr3 = new Teacher("tcr3", "sur3");
 
         courses.add(new Course("crs1", "desc1", tcr1,
-                new LinkedList<>(Arrays.asList(new Student[]{students.get(0), students.get(1)}))));
+                new LinkedList<>(Arrays.asList(new Student[]{students.get(0), students.get(1)})), Type.Mandatory));
         courses.add(new Course("crs2", "desc2", tcr1,
-                new LinkedList<>(Arrays.asList(new Student[]{students.get(1), students.get(2)}))));
+                new LinkedList<>(Arrays.asList(new Student[]{students.get(1), students.get(2)})), Type.NotMandatory));
         courses.add(new Course("crs3", "desc3", tcr2,
-                new LinkedList<>(Arrays.asList(new Student[]{students.get(3), students.get(4)}))));
+                new LinkedList<>(Arrays.asList(new Student[]{students.get(3), students.get(4)})), Type.NotMandatory));
         courses.add(new Course("crs4", "desc4", tcr3,
-                new LinkedList<>(Arrays.asList(new Student[]{students.get(0), students.get(3)}))));
+                new LinkedList<>(Arrays.asList(new Student[]{students.get(0), students.get(3)})), Type.Summer));
         courses.add(new Course("crs5", "desc5", tcr3,
-                new LinkedList<>(Arrays.asList(new Student[]{students.get(4), students.get(1)}))));
+                new LinkedList<>(Arrays.asList(new Student[]{students.get(4), students.get(1)})), Type.Summer));
 
     }
 
@@ -66,5 +67,9 @@ public class CourseRepository {
     }
     public boolean nameExists(String name){
         return courses.stream().filter(x -> x.getName().equals(name)).count() > 0;
+    }
+
+    public List<Course> filterByType(Type type){
+        return courses.stream().filter(x -> x.getType() == type).toList();
     }
 }

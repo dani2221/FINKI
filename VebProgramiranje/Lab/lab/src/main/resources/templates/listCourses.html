@@ -16,6 +16,12 @@
 <main>
     <div style="color: red" th:text="${error}"></div>
     <h2>Choose course:</h2>
+    <form th:method="POST" th:action="@{/courses/filter}">
+        <select name="type">
+            <option th:each="type :${types}" th:value="${type}" th:text="${type}" th:selected="${typeSelect!=null && typeSelect.equals(type)}"></option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
     <form th:method="POST" th:action="@{/courses}" id="chose">
     <div th:each="course : ${courses}">
         <input th:id="${course.courseId}"  type="radio" name="courseId" th:value="${course.courseId}">
