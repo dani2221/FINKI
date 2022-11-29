@@ -58,6 +58,7 @@
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VebProgramiranje/Lab)
 - [Вовед во наука за податоци - ВНП](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/Lab)
+  - [Прв колоквиум 2022](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/I_Kol_2022)
 - [Паралелно и дистрибуирано процесирање - ПиДП](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/)
   - [Домашни](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/Domasni)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/Lab)
