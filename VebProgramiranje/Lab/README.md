@@ -10,3 +10,7 @@
 - [Имплементација](https://github.com/dani2221/FINKI/commit/cd5de2e58cb4a5e97b6b769adb289e4f6b0379fb)
 - [Дополнително барање](https://github.com/dani2221/FINKI/commit/78a904a18416b16dfb99135a6e4f0716953b8a89)
     - Да се додаде поле type енумерација на курс и да се филтрира по него
+
+Лаб 3:
+- [Барања](./lab2_tekst.txt) 
+- [Имплементација](https://github.com/dani2221/FINKI/commit/9d7bedd0f5374a57cf8eb707d067074a6d3be671)
