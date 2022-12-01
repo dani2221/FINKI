@@ -1,6 +1,7 @@
 package mk.ukim.finki.wp.lab.web.servlet;
 
 import mk.ukim.finki.wp.lab.model.Course;
+import mk.ukim.finki.wp.lab.model.Grade;
 import mk.ukim.finki.wp.lab.model.Student;
 import mk.ukim.finki.wp.lab.service.CourseService;
 import mk.ukim.finki.wp.lab.service.StudentService;
@@ -29,9 +30,9 @@ public class StudentEnrollmentSummaryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         WebContext webContext = new WebContext(req, resp, this.getServletContext());
         long courseId = (long) req.getSession().getAttribute("courseId");
-        List<Student> students = courseService.listStudentsByCourse(courseId);
+        List<Grade> grades = courseService.getGradesById(courseId);
         Course course = courseService.listAll().stream().filter(x -> x.getCourseId().equals(courseId)).findFirst().orElse(null);
-        webContext.setVariable("students",students);
+        webContext.setVariable("grades",grades);
         webContext.setVariable("course",course.getName());
 
         this.templateEngine.process("studentsInCourse.html", webContext, resp.getWriter());

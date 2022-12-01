@@ -18,18 +18,18 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> listAll() {
-        return studentRepository.findAllStudents();
+        return studentRepository.findAll();
     }
 
     @Override
     public List<Student> searchByNameOrSurname(String text) {
-        return studentRepository.findAllByNameOrSurname(text);
+        return studentRepository.findAllByNameOrSurname(text, text);
     }
 
     @Override
     public Student save(String username, String password, String name, String surname) {
         Student st =  new Student(username, password, name, surname);
-        studentRepository.addStudent(st);
+        studentRepository.save(st);
         return st;
     }
 }

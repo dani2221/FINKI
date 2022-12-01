@@ -1,6 +1,5 @@
 package mk.ukim.finki.wp.lab.web.servlet;
 
-import mk.ukim.finki.wp.lab.model.Course;
 import mk.ukim.finki.wp.lab.model.Student;
 import mk.ukim.finki.wp.lab.service.CourseService;
 import mk.ukim.finki.wp.lab.service.StudentService;
@@ -13,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @WebServlet("/AddStudent")
@@ -52,7 +52,9 @@ public class ListStudentServlet extends HttpServlet {
             this.templateEngine.process("listStudents.html", webContext, resp.getWriter());
         } else {
             long courseId = (long) req.getSession().getAttribute("courseId");
-            courseService.addStudentInCourse(student, courseId);
+            LocalDateTime dateTime = LocalDateTime.parse(req.getParameter("dateTime"));
+            Character grade = req.getParameter("grade").charAt(0);
+            courseService.addStudentInCourse(student, courseId, dateTime, grade);
             resp.sendRedirect("/StudentEnrollmentSummary");
         }
     }

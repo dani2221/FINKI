@@ -2,16 +2,16 @@ package mk.ukim.finki.wp.lab.service.Impl;
 
 import mk.ukim.finki.wp.lab.exceptions.CourseNameExistsException;
 import mk.ukim.finki.wp.lab.exceptions.CourseNotFoundException;
-import mk.ukim.finki.wp.lab.model.Course;
-import mk.ukim.finki.wp.lab.model.Student;
-import mk.ukim.finki.wp.lab.model.Teacher;
-import mk.ukim.finki.wp.lab.model.Type;
+import mk.ukim.finki.wp.lab.model.*;
 import mk.ukim.finki.wp.lab.repository.CourseRepository;
 import mk.ukim.finki.wp.lab.repository.StudentRepository;
 import mk.ukim.finki.wp.lab.repository.TeacherRepository;
+import mk.ukim.finki.wp.lab.repository.GradeRepository;
 import mk.ukim.finki.wp.lab.service.CourseService;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,70 +21,78 @@ public class CourseServiceImpl implements CourseService {
     private final CourseRepository courseRepository;
     private final StudentRepository studentRepository;
     private final TeacherRepository teacherRepository;
+    private final GradeRepository gradeRepository;
 
-    public CourseServiceImpl(CourseRepository courseRepository, StudentRepository studentRepository, TeacherRepository teacherRepository) {
+    public CourseServiceImpl(CourseRepository courseRepository, StudentRepository studentRepository, TeacherRepository teacherRepository, GradeRepository gradeRepository) {
         this.courseRepository = courseRepository;
         this.studentRepository = studentRepository;
         this.teacherRepository = teacherRepository;
+        this.gradeRepository = gradeRepository;
     }
 
     @Override
     public List<Student> listStudentsByCourse(Long courseId) {
-        return courseRepository.findAllStudentsByCourse(courseId);
+        return courseRepository.findById(courseId).get().getGrades().stream().map(el -> el.getStudent()).toList();
     }
 
     @Override
-    public Course addStudentInCourse(String username, Long courseId) {
-        Student std = studentRepository.findAllStudents().stream()
-                .filter(x -> x.getUsername().equals(username))
-                .findFirst().orElse(null);
-        Course crs = courseRepository.findById(courseId);
+    public Course addStudentInCourse(String username, Long courseId, LocalDateTime dateTime, Character grade) {
+        Student std = this.studentRepository.findById(username).orElseThrow();
+        Course crs = courseRepository.findById(courseId).orElseThrow();
 
-        return courseRepository.addStudentToCourse(std, crs);
+        Grade gr = new Grade(grade, std, crs, dateTime);
+
+        gradeRepository.save(gr);
+
+        return crs;
     }
 
     @Override
     public List<Course> listAll() {
-        return courseRepository.findAllCourses();
+        return courseRepository.findAll();
     }
 
     @Override
     public Course addCourse(String name, String description, long teacherId) throws CourseNameExistsException {
-        if(this.courseRepository.nameExists(name)){
+        if(this.courseRepository.existsByName(name)){
             throw new CourseNameExistsException(name);
         }
 
-        Teacher teacher = teacherRepository.getById(teacherId).get();
+        Teacher teacher = teacherRepository.findById(teacherId).orElseThrow();
         Course course = new Course(name, description, teacher, new LinkedList<>(), Type.Mandatory);
-        courseRepository.addCourse(course);
+        courseRepository.save(course);
         return course;
     }
 
     @Override
     public void delete(long id) {
-        this.courseRepository.delete(id);
+        this.courseRepository.deleteById(id);
     }
 
     @Override
     public Course editCourse(String name, String description, long teacherId, long courseId) throws CourseNotFoundException {
-        if(courseRepository.findById(courseId) == null){
-            throw new CourseNotFoundException();
-        }
 
-        Teacher teacher = teacherRepository.getById(teacherId).get();
-        Course course = new Course(name, description, teacher, new LinkedList<>(), Type.Mandatory);
-        courseRepository.delete(courseId);
-        courseRepository.addCourse(course);
+        Teacher teacher = teacherRepository.findById(teacherId).orElseThrow();
+        Course course = courseRepository.findById(courseId).orElseThrow();
+        course.setName(name);
+        course.setDescription(description);
+        course.setTeacher(teacher);
+        courseRepository.save(course);
         return course;
     }
 
     @Override
     public Course getById(long id) {
-        return this.courseRepository.findById(id);
+        return this.courseRepository.findById(id).orElseThrow();
     }
 
     @Override
     public List<Course> filterByType(Type type) {
-        return this.courseRepository.filterByType(type);
+        return this.courseRepository.findByType(type);
+    }
+
+    @Override
+    public List<Grade> getGradesById(long id) {
+        return this.courseRepository.findById(id).get().getGrades();
     }
 }

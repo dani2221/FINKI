@@ -12,7 +12,7 @@
     <label for='description'>Description:</label><input id='description' type='text' name='description' th:value="${course} != null ? ${course.description} : ''"/><br/>
 
     <select name="teacherId" id="teacherId">
-        <option th:each="teacher : ${teachers}" th:value="${teacher.id}" th:text="${teacher.name + ' ' + teacher.surname}" th:selected="${course != null && course.teacher.id == teacher.id}"></option>
+        <option th:each="teacher : ${teachers}" th:value="${teacher.id}" th:text="${teacher.fullName}" th:selected="${course != null && course.teacher.id == teacher.id}"></option>
     </select>
 
     <input id='courseEditId' type='hidden' name='courseEditId' th:value="${course} != null ? ${course.courseId} : ''"/><br/>

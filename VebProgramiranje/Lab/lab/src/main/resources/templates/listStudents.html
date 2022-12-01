@@ -46,6 +46,12 @@
         </div>
 
         <br/>
+        <input type="datetime-local" name="dateTime" id="date"/>
+        <label for="date">Date</label>
+        <br/>
+        <input type="text" id="grade" name="grade"/>
+        <label for="grade">Grade</label>
+        <br/>
         <input type="submit" value="submit" th:disabled="${students.size()==0}">
     </form>
 </section>

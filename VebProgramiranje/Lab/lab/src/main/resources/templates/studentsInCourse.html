@@ -11,7 +11,7 @@
 <section>
   <div th:text="${course}"></div>
   <ul>
-    <li th:each="student : ${students}" th:text="${student.name + ' ' + student.surname + ' (' +student.username+')'}"></li>
+    <li th:each="grade : ${grades}" th:text="${grade.student.name + ' ' + grade.student.surname + ' (' +grade.student.username+')' + ' - ' + grade.grade + ' - ' + #temporals.format(grade.timestamp, 'dd-MM-yyyy HH:mm:ss')}"></li>
   </ul>
   <a href="/listCourses">Back</a>
 </section>
