@@ -1,0 +1,2 @@
+jar -cvf findmax.jar -C find_max/ .  
+hadoop jar findmax.jar FindMax
