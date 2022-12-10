@@ -1,2 +1,2 @@
 jar -cvf findmax.jar -C find_max/ .  
-hadoop jar findmax.jar FindMax
+hadoop jar /find_max/findmax.jar org.myorg.FindMax find_max/input /output
