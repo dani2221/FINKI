@@ -1,0 +1,7 @@
+# nekolku skrateni linii of outputot bidejki moodle ne dava nad 10mb upload
+
+null,1 / HTTP/1.1,10.223.157.186
+null,2 /assets/css/960.css HTTP/1.1,10.223.157.186
+null,3 /assets/css/reset.css HTTP/1.1,10.223.157.186
+null,4 /assets/js/lowpro.js HTTP/1.1,10.223.157.186
+null,5 /favicon.ico HTTP/1.1,10.223.157.186

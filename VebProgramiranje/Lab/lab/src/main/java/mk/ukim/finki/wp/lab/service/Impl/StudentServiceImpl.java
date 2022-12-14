@@ -23,7 +23,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> searchByNameOrSurname(String text) {
-        return studentRepository.findAllByNameOrSurname(text, text);
+        return studentRepository.findAllByNameContainingOrSurnameContaining(text, text);
     }
 
     @Override
