@@ -36,20 +36,20 @@
         <tbody>
         <tr th:each="course : ${courses}" style="border: 1px solid black;border-collapse: collapse">
             <td th:text="${course.name}"></td>
-            <td>
+            <td sec:authorize="hasRole('ROLE_ADMIN')">
             <a th:href="@{'/courses/edit-form/{id}' (id=${course.courseId})}">Edit</a>
             </td>
-            <td>
+            <td sec:authorize="hasRole('ROLE_ADMIN')">
                 <div style="margin-top: 13px">
                 <form th:method="POST" th:action="@{'/courses/delete/{id}' (id=${course.courseId})}" th:id="${course.courseId+ 'f'}">
-                    <button type="submit" name="Delete" th:form="${course.courseId+ 'f'}">Delete</button>
+                    <button class="del" type="submit" name="Delete" th:form="${course.courseId+ 'f'}">Delete</button>
                 </form>
                 </div>
             </td>
         </tr>
         </tbody>
     </table>
-    <a th:href="@{'/courses/add-form/'}">Add course</a>
+    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{'/courses/add-form/'}">Add course</a>
 </main>
 </body>
 </html>

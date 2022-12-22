@@ -1,4 +1,4 @@
-<html>
+<html xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <title>Add new Student to Course</title>
@@ -32,14 +32,14 @@
 </header>
 <section>
     <h2>Select the student to enroll:</h2>
-    <a href='/CreateStudent' type='button'>Create New Student</a> <br/> <br/>
+    <a sec:authorize="hasRole('ROLE_ADMIN')" href='/students/create' type='button'>Create New Student</a> <br/> <br/>
     <div>
-        <form th:method="POST" th:action="@{/AddStudent}">
+        <form th:method="POST" th:action="@{/students}">
             <label for='search'>Search</label><input id='search' type='text' name='search'/><br/>
             <input type='submit' value='Submit'/>
         </form>
     </div>
-    <form th:method="POST" th:action="@{/AddStudent}">
+    <form th:method="POST" th:action="@{/students}">
         <div th:each="student : ${students}">
             <input th:id="${student.username}"  type="radio" name="student" th:value="${student.username}">
             <label th:for="${student.username}" th:text="${student.name + ' ' + student.surname}"></label>

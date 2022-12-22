@@ -51,7 +51,7 @@ public class CourseController {
     @PostMapping
     public String choseCourse(@RequestParam long courseId, HttpSession session) {
         session.setAttribute("courseId", courseId);
-        return "redirect:/AddStudent";
+        return "redirect:/students";
     }
 
     @PostMapping("/add")
@@ -70,7 +70,7 @@ public class CourseController {
             Course crs = this.courseService.editCourse(name, description, teacherId, courseEditId);
         }
 
-        return "redirect:/listCourses";
+        return "redirect:/courses";
     }
 
     @PostMapping("/delete/{id}")

@@ -57,8 +57,10 @@ public class CourseServiceImpl implements CourseService {
         if(this.courseRepository.existsByName(name)){
             throw new CourseNameExistsException(name);
         }
-
-        Teacher teacher = teacherRepository.findById(teacherId).orElseThrow();
+        Teacher teacher = null;
+        if(teacherId != 0){
+            teacher = teacherRepository.findById(teacherId).orElseThrow();
+        }
         Course course = new Course(name, description, teacher, new LinkedList<>(), Type.Mandatory);
         courseRepository.save(course);
         return course;

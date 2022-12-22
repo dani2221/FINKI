@@ -13,7 +13,7 @@
   <ul>
     <li th:each="grade : ${grades}" th:text="${grade.student.name + ' ' + grade.student.surname + ' (' +grade.student.username+')' + ' - ' + grade.grade + ' - ' + #temporals.format(grade.timestamp, 'dd-MM-yyyy HH:mm:ss')}"></li>
   </ul>
-  <a href="/listCourses">Back</a>
+  <a href="/students">Back</a>
 </section>
 
 </body>

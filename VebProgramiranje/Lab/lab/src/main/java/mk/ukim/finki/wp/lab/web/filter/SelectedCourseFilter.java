@@ -1,5 +1,7 @@
 package mk.ukim.finki.wp.lab.web.filter;
 
+import org.springframework.context.annotation.Profile;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
