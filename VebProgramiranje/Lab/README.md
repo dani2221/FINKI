@@ -14,3 +14,8 @@
 Лаб 3:
 - [Барања](./lab2_tekst.txt) 
 - [Имплементација](https://github.com/dani2221/FINKI/commit/9d7bedd0f5374a57cf8eb707d067074a6d3be671)
+- Дополнително барање - веќе имплементирано
+
+Лаб 4:
+- [Барања](./lab4_tekst.txt)
+- [Имплементација](https://github.com/dani2221/FINKI/commit/0e1f25deeda4860e3bcbbd92351269637e88e8b7)
