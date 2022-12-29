@@ -19,3 +19,5 @@
 Лаб 4:
 - [Барања](./lab4_tekst.txt)
 - [Имплементација](https://github.com/dani2221/FINKI/commit/0e1f25deeda4860e3bcbbd92351269637e88e8b7)
+- [Дополнително барање](https://github.com/dani2221/FINKI/commit/f3aca2770651ce97f4fb5221543e808ea07e15ba)
+    - Да се додадат 3 интеграциски тестови
