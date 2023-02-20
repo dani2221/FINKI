@@ -12,6 +12,7 @@
 - Семестар 2 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar2) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters2)
 - Семестар 3 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar3) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters3)
 - Семестар 4 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar4) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters4)
+- Семестар 5 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar5) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters5)
 
 ## Сите предмети
 - [Структурно програмирање - СП](https://github.com/dani2221/FINKI/tree/master/Strukturno)
@@ -59,6 +60,7 @@
 - [Вовед во наука за податоци - ВНП](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/Lab)
   - [Прв колоквиум 2022](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/I_Kol_2022)
+  - [Задачи за вежби](https://github.com/dani2221/FINKI/tree/master/VovedNaukaPodatoci/Zadaci_za_vezbi)
 - [Паралелно и дистрибуирано процесирање - ПиДП](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/)
   - [Домашни](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/Domasni)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/Lab)
