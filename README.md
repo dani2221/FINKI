@@ -64,6 +64,10 @@
 - [Паралелно и дистрибуирано процесирање - ПиДП](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/)
   - [Домашни](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/Domasni)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/ParalelnoDistribuiranoProcesiranje/Lab)
+- Електронска и мобилна трговија - ЕиМТ
+  - [Лабораториски вежби](https://github.com/dani2221/emt-lab)
+- [Машинско учење - МУ](https://github.com/dani2221/FINKI/tree/master/MashinskoUchenje/)
+  - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/MashinskoUchenje/Lab)
 
 
 
