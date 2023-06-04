@@ -1,5 +1,5 @@
 """
-URL configuration for RepairShop project.
+URL configuration for Blogs project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,12 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls.static import static
-from Repairs.views import repairs
-
-from RepairShop import settings
+from BlogApp.views import posts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('repairs/', repairs)
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+    path('posts/', posts)
+]
