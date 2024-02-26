@@ -4,16 +4,6 @@
 - Задачи за вежбање од колоквиуми
 - Дополнителни материјали
 
-## Напомена
-Овие задачи се ставени за помош и вежбање. <b>Не смее да се користат за плагијаторство.</b>
-
-## Кодови по семестри
-- Семестар 1 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar1) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters)
-- Семестар 2 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar2) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters2)
-- Семестар 3 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar3) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters3)
-- Семестар 4 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar4) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters4)
-- Семестар 5 - [Веб](https://github.com/dani2221/FINKI/tree/semesters/semestar5) - [Download](https://github.com/dani2221/FINKI/releases/tag/semesters5)
-
 ## Сите предмети
 - [Структурно програмирање - СП](https://github.com/dani2221/FINKI/tree/master/Strukturno)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/Strukturno/Lab)
@@ -71,6 +61,8 @@
   - [Лабораториски вежби](https://github.com/dani2221/emt-lab)
 - [Машинско учење - МУ](https://github.com/dani2221/FINKI/tree/master/MashinskoUchenje/)
   - [Лабораториски вежби](https://github.com/dani2221/FINKI/tree/master/MashinskoUchenje/Lab)
+- [Програмски Парадигми - ПП](https://github.com/dani2221/FINKI/tree/master/ProgramskiParadigmi/)
+  - [Домашни](https://github.com/dani2221/FINKI/tree/master/ProgramskiParadigmi/Domasni)
 
 
 
